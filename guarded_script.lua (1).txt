@@ -1,0 +1,3228 @@
+--[[ Protected by Lua Guard ]]
+
+(function(...) 
+--"\091\010\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\010\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\032\080\079\076\073\032\065\073\010\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\010\079\078\069\032\083\067\082\073\080\084\032\045\032\069\088\069\067\085\084\079\082\032\069\068\073\084\073\079\078\010\010\066\117\105\108\116\032\116\111\032\098\101\032\099\111\110\115\101\114\118\097\116\105\118\101\032\097\110\100\032\101\097\115\121\032\102\111\114\032\101\120\101\099\117\116\111\114\115\032\116\111\032\114\117\110\046\010\073\110\099\108\117\100\101\115\058\010\045\032\073\110\116\114\111\032\111\110\098\111\097\114\100\105\110\103\010\045\032\065\080\073\032\107\101\121\032\115\101\116\117\112\032\043\032\115\104\111\119\047\104\105\100\101\010\045\032\084\104\105\110\107\105\110\103\032\047\032\083\101\097\114\099\104\105\110\103\032\109\111\100\101\010\045\032\076\111\099\097\108\032\104\117\109\097\110\032\118\101\114\105\102\105\099\097\116\105\111\110\032\043\032\114\101\116\114\121\010\045\032\077\097\105\110\032\085\073\010\045\032\079\112\101\110\032\047\032\067\108\111\115\101\032\047\032\082\101\111\112\101\110\010\045\032\083\109\111\111\116\104\032\100\114\097\103\010\045\032\084\097\098\115\058\032\077\097\105\110\032\047\032\065\100\118\097\110\099\101\032\047\032\083\101\116\116\105\110\103\115\032\047\032\084\101\099\104\032\047\032\067\114\101\100\105\116\010\045\032\067\111\100\101\066\111\120\032\043\032\067\111\112\121\032\043\032\082\117\110\010\045\032\079\112\116\105\111\110\097\108\032\109\097\114\107\101\100\045\099\111\100\101\032\097\117\116\111\032\101\120\101\099\117\116\105\111\110\010\045\032\086\105\101\119\032\084\104\105\110\107\105\110\103\032\047\032\086\105\101\119\032\083\101\097\114\099\104\105\110\103\010\045\032\067\111\110\118\101\114\115\097\116\105\111\110\032\104\105\115\116\111\114\121\010\045\032\078\101\119\032\067\104\097\116\032\047\032\067\108\101\097\114\032\067\104\097\116\010\045\032\065\080\073\032\116\101\115\116\010\045\032\077\111\100\101\108\032\099\097\116\097\108\111\103\032\114\101\102\114\101\115\104\010\045\032\080\101\114\115\111\110\097\032\047\032\112\114\111\109\112\116\032\047\032\109\111\100\101\108\032\047\032\065\080\073\032\107\101\121\032\101\100\105\116\105\110\103\010\045\032\085\073\032\115\099\097\108\101\032\047\032\111\112\097\099\105\116\121\010\045\032\079\112\116\105\111\110\097\108\032\084\101\099\104\032\109\111\118\101\109\101\110\116\032\047\032\106\117\109\112\032\047\032\099\104\097\116\010\045\032\085\073\065\115\112\101\099\116\082\097\116\105\111\067\111\110\115\116\114\097\105\110\116\032\111\110\032\105\110\116\114\111\032\097\110\100\032\109\097\105\110\032\119\105\110\100\111\119\010\045\032\084\111\112\045\108\101\118\101\108\032\101\114\114\111\114\032\114\101\112\111\114\116\105\110\103\010\010\078\079\084\069\058\032\084\104\105\115\032\105\115\032\101\120\101\099\117\116\111\114\047\099\108\105\101\110\116\032\099\111\100\101\046\032\075\101\101\112\032\115\101\099\114\101\116\032\065\080\073\032\107\101\121\115\032\112\114\105\118\097\116\101\046\010\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\061\010\093"
+
+--=============================================================
+-- BOOT WRAPPER
+--=============================================================
+
+local function Boot()
+
+    --=========================================================
+    -- SERVICES
+    --=========================================================
+
+    local Players = game:GetService("\080\108\097\121\101\114\115")
+    local UIS = game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101")
+    local TweenService = game:GetService("\084\119\101\101\110\083\101\114\118\105\099\101")
+    local HttpService = game:GetService("\072\116\116\112\083\101\114\118\105\099\101")
+    local RunService = game:GetService("\082\117\110\083\101\114\118\105\099\101")
+    local CoreGui = game:GetService("\067\111\114\101\071\117\105")
+
+    local LocalPlayer = Players.LocalPlayer
+    local MainWindow = nil
+    local OpenButton = nil
+
+    print("\091\080\111\108\105\032\065\073\093\032\066\111\111\116\105\110\103\046\046\046")
+
+    if not LocalPlayer then
+        error("\076\111\099\097\108\080\108\097\121\101\114\032\119\097\115\032\110\111\116\032\097\118\097\105\108\097\098\108\101")
+    end
+
+    --=========================================================
+    -- CONFIG
+    --=========================================================
+
+    local Config = {
+        Name = "\080\111\108\105\032\065\073",
+        Creator = "\073\109\112\111\115\115\105\098\108\101\079\098\098\121\051\050",
+
+        Endpoint = "\104\116\116\112\115\058\047\047\103\101\110\046\112\111\108\108\105\110\097\116\105\111\110\115\046\097\105\047\118\049\047\099\104\097\116\047\099\111\109\112\108\101\116\105\111\110\115",
+        ModelsEndpoint = "\104\116\116\112\115\058\047\047\103\101\110\046\112\111\108\108\105\110\097\116\105\111\110\115\046\097\105\047\118\049\047\109\111\100\101\108\115",
+
+        APIKey = "",
+
+        ThinkingModel = "\111\112\101\110\097\105\047\103\112\116\045\053\046\052\045\110\097\110\111",
+        SearchingModel = "\103\101\109\105\110\105\045\115\101\097\114\099\104",
+        Model = "\111\112\101\110\097\105\047\103\112\116\045\053\046\052\045\110\097\110\111",
+
+        Mode = "\084\104\105\110\107\105\110\103",
+        Persona = "\080\111\108\105\032\065\073",
+
+        Temperature = 0.7,
+        MaxTokens = 0x1388,
+        MaxHistory = 0x1C,
+        MaxPromptLength = 0x1194,
+        Retries = 0x2,
+
+        SystemPrompt = "\091\010\089\111\117\032\097\114\101\032\080\111\108\105\032\065\073\044\032\097\032\112\114\111\102\101\115\115\105\111\110\097\108\032\065\073\032\097\115\115\105\115\116\097\110\116\032\114\117\110\110\105\110\103\032\105\110\115\105\100\101\032\082\111\098\108\111\120\046\010\010\089\111\117\032\104\101\108\112\032\119\105\116\104\058\010\045\032\082\111\098\108\111\120\032\097\110\100\032\076\117\097\117\032\115\099\114\105\112\116\105\110\103\010\045\032\100\101\098\117\103\103\105\110\103\032\097\110\100\032\099\111\100\101\032\114\101\112\097\105\114\010\045\032\085\073\032\100\101\115\105\103\110\032\097\110\100\032\103\097\109\101\032\115\121\115\116\101\109\115\010\045\032\119\114\105\116\105\110\103\032\097\110\100\032\110\111\114\109\097\108\032\099\111\110\118\101\114\115\097\116\105\111\110\010\045\032\101\120\112\108\097\110\097\116\105\111\110\115\032\097\110\100\032\112\108\097\110\110\105\110\103\010\045\032\114\101\115\101\097\114\099\104\045\115\116\121\108\101\032\113\117\101\115\116\105\111\110\115\010\010\066\101\032\112\114\097\099\116\105\099\097\108\044\032\097\099\099\117\114\097\116\101\044\032\097\110\100\032\112\114\111\102\101\115\115\105\111\110\097\108\046\010\010\087\104\101\110\032\116\104\101\032\117\115\101\114\032\101\120\112\108\105\099\105\116\108\121\032\097\115\107\115\032\121\111\117\032\116\111\032\112\101\114\102\111\114\109\032\097\032\108\111\099\097\108\032\099\111\100\105\110\103\047\097\099\116\105\111\110\032\116\097\115\107\044\032\121\111\117\032\109\097\121\032\114\101\116\117\114\110\032\111\110\101\032\115\101\108\102\045\099\111\110\116\097\105\110\101\100\032\076\117\097\117\032\098\108\111\099\107\032\109\097\114\107\101\100\058\010\045\045\032\080\079\076\073\095\065\085\084\079\095\069\088\069\067\010\010\079\110\108\121\032\117\115\101\032\116\104\097\116\032\109\097\114\107\101\114\032\119\104\101\110\032\116\104\101\032\117\115\101\114\032\097\099\116\117\097\108\108\121\032\097\115\107\115\032\102\111\114\032\097\110\032\097\099\116\105\111\110\032\116\111\032\098\101\032\112\101\114\102\111\114\109\101\100\046\032\068\111\032\110\111\116\032\109\097\114\107\032\116\117\116\111\114\105\097\108\115\032\111\114\032\101\120\097\109\112\108\101\115\046\010\010\084\101\099\104\032\099\111\109\109\097\110\100\115\044\032\111\110\108\121\032\119\104\101\110\032\114\101\113\117\101\115\116\101\100\032\097\110\100\032\097\108\108\111\119\101\100\058\010\064\109\111\118\101\032\102\111\114\119\097\114\100\032\049\010\064\109\111\118\101\032\098\097\099\107\119\097\114\100\032\049\010\064\109\111\118\101\032\108\101\102\116\032\049\010\064\109\111\118\101\032\114\105\103\104\116\032\049\010\064\106\117\109\112\010\064\115\116\111\112\010\064\099\104\097\116\032\104\101\108\108\111\032\119\111\114\108\100\010\093",
+
+        Theme = {
+            Window = Color3.fromRGB(0xB, 0xC, 0x10),
+            Header = Color3.fromRGB(0x11, 0x12, 0x17),
+            Panel = Color3.fromRGB(0x14, 0x15, 0x1B),
+            Input = Color3.fromRGB(0x18, 0x19, 0x1F),
+            User = Color3.fromRGB(0x27, 0x29, 0x32),
+            AI = Color3.fromRGB(0x12, 0x13, 0x18),
+            Code = Color3.fromRGB(0x8, 0x9, 0xC),
+            Border = Color3.fromRGB(0x31, 0x33, 0x3D),
+            Text = Color3.fromRGB(0xEE, 0xEF, 0xF4),
+            SubText = Color3.fromRGB(0x93, 0x96, 0xA1),
+            Accent = Color3.fromRGB(0x63, 0x71, 0xFF),
+            Green = Color3.fromRGB(0x64, 0xDC, 0x91),
+            Red = Color3.fromRGB(0xFF, 0x6E, 0x6E),
+            Yellow = Color3.fromRGB(0xF4, 0xBF, 0x5B)
+        }
+    }
+
+    --=========================================================
+    -- EXECUTOR FUNCTIONS
+    --=========================================================
+
+    local function GetEnv()
+        if typeof(getgenv) == "\102\117\110\099\116\105\111\110" then
+            local ok, env = pcall(getgenv)
+            if ok and type(env) == "\116\097\098\108\101" then
+                return env
+            end
+        end
+        return _G
+    end
+
+    local Env = GetEnv()
+
+    local function FindRequest()
+        local list = {
+            rawget(Env, "\114\101\113\117\101\115\116"),
+            rawget(Env, "\104\116\116\112\095\114\101\113\117\101\115\116"),
+        }
+
+        local synTable = rawget(Env, "\115\121\110")
+        if type(synTable) == "\116\097\098\108\101" then
+            table.insert(list, synTable.request)
+        end
+
+        local httpTable = rawget(Env, "\104\116\116\112")
+        if type(httpTable) == "\116\097\098\108\101" then
+            table.insert(list, httpTable.request)
+        end
+
+        for _, fn in ipairs(list) do
+            if typeof(fn) == "\102\117\110\099\116\105\111\110" then
+                return fn
+            end
+        end
+
+        return nil
+    end
+
+    local function FindClipboard()
+        local list = {
+            rawget(Env, "\115\101\116\099\108\105\112\098\111\097\114\100"),
+            rawget(Env, "\116\111\099\108\105\112\098\111\097\114\100"),
+            rawget(Env, "\115\101\116\095\099\108\105\112\098\111\097\114\100")
+        }
+
+        for _, fn in ipairs(list) do
+            if typeof(fn) == "\102\117\110\099\116\105\111\110" then
+                return fn
+            end
+        end
+
+        return nil
+    end
+
+    local Request = FindRequest()
+    local SetClipboard = FindClipboard()
+
+    local function GetGuiParent()
+        if typeof(gethui) == "\102\117\110\099\116\105\111\110" then
+            local ok, result = pcall(gethui)
+            if ok and result then
+                return result
+            end
+        end
+
+        local playerGui = LocalPlayer:FindFirstChildOfClass("\080\108\097\121\101\114\071\117\105")
+        if playerGui then
+            return playerGui
+        end
+
+        return CoreGui
+    end
+
+    local GuiParent = GetGuiParent()
+
+    --=========================================================
+    -- HELPERS
+    --=========================================================
+
+    local function New(className, properties, parent)
+        local object = Instance.new(className)
+
+        for key, value in pairs(properties or {}) do
+            object[key] = value
+        end
+
+        object.Parent = parent
+        return object
+    end
+
+    local function Corner(parent, radius)
+        return New("\085\073\067\111\114\110\101\114", {
+            CornerRadius = UDim.new(0x0, radius)
+        }, parent)
+    end
+
+    local function Stroke(parent, color, thickness)
+        return New("\085\073\083\116\114\111\107\101", {
+            Color = color,
+            Thickness = thickness or 0x1
+        }, parent)
+    end
+
+    local function Pad(parent, top, bottom, left, right)
+        return New("\085\073\080\097\100\100\105\110\103", {
+            PaddingTop = UDim.new(0x0, top or 0x0),
+            PaddingBottom = UDim.new(0x0, bottom or 0x0),
+            PaddingLeft = UDim.new(0x0, left or 0x0),
+            PaddingRight = UDim.new(0x0, right or 0x0)
+        }, parent)
+    end
+
+    local function Animate(object, properties, duration)
+        local tween = TweenService:Create(
+            object,
+            TweenInfo.new(
+                duration or 0.18,
+                Enum.EasingStyle.Quart,
+                Enum.EasingDirection.Out
+            ),
+            properties
+        )
+        tween:Play()
+        return tween
+    end
+
+    local function Trim(text)
+        text = tostring(text or "")
+        text = text:gsub("\094\037\115\043", "")
+        text = text:gsub("\037\115\043\036", "")
+        return text
+    end
+
+    local function Escape(text)
+        text = tostring(text or "")
+        text = text:gsub("\038", "\038\097\109\112\059")
+        text = text:gsub("\060", "\038\108\116\059")
+        text = text:gsub("\062", "\038\103\116\059")
+        text = text:gsub("\034", "\038\113\117\111\116\059")
+        return text
+    end
+
+    local function CopyText(text)
+        if not SetClipboard then
+            return false, "\067\108\105\112\098\111\097\114\100\032\117\110\097\118\097\105\108\097\098\108\101"
+        end
+
+        local ok = pcall(SetClipboard, tostring(text))
+        if ok then
+            return true
+        end
+
+        return false, "\067\111\112\121\032\102\097\105\108\101\100"
+    end
+
+    --=========================================================
+    -- REMOVE OLD INSTANCE
+    --=========================================================
+
+    pcall(function()
+        local old = GuiParent:FindFirstChild("\080\111\108\105\065\073")
+        if old then
+            old:Destroy()
+        end
+    end)
+
+    --=========================================================
+    -- ROOT
+    --=========================================================
+
+    local Gui = New("\083\099\114\101\101\110\071\117\105", {
+        Name = "\080\111\108\105\065\073",
+        ResetOnSpawn = false,
+        IgnoreGuiInset = true,
+        ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+        DisplayOrder = 0xF423F
+    }, GuiParent)
+
+    New("\085\073\083\099\097\108\101", {
+        Scale = 0x1
+    }, Gui)
+
+    --=========================================================
+    -- STATE
+    --=========================================================
+
+    local State = {
+        GenerationID = 0x0,
+        Generating = false,
+        IntroPage = 0x1,
+        Verified = false,
+        MainTab = "\077\065\073\078",
+        Minimized = false,
+        WindowOpen = false,
+        ActivityVisible = true,
+        SearchVisible = false,
+        TechMovement = false,
+        TechChat = false,
+        TechAuto = false,
+        AutoExecuteCode = true,
+        Scale = 0x1,
+        Opacity = 0x1,
+        LastPrompt = nil,
+        LastResponse = nil,
+        Models = {}
+    }
+
+    local History = {
+        {
+            role = "\115\121\115\116\101\109",
+            content = Config.SystemPrompt
+        }
+    }
+
+    --=========================================================
+    -- NOTIFICATION
+    --=========================================================
+
+    local Notification = New("\084\101\120\116\076\097\098\101\108", {
+        AnchorPoint = Vector2.new(0.5, 0x1),
+        Position = UDim2.new(0.5, 0x0, 0x1, 0x37),
+        Size = UDim2.fromOffset(0x136, 0x28),
+        BackgroundColor3 = Color3.fromRGB(0x1D, 0x1E, 0x25),
+        BorderSizePixel = 0x0,
+        Visible = false,
+        Text = "",
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0xC,
+        TextColor3 = Config.Theme.Text,
+        ZIndex = 0x1388
+    }, Gui)
+
+    Corner(Notification, 0xB)
+    Stroke(Notification, Config.Theme.Border, 0x1)
+
+    local notificationId = 0x0
+
+    local function Notify(text)
+        notificationId += 0x1
+        local id = notificationId
+
+        Notification.Text = tostring(text)
+        Notification.Visible = true
+
+        Animate(Notification, {
+            Position = UDim2.new(0.5, 0x0, 0x1, -0x12)
+        }, 0.2)
+
+        task.delay(2.1, function()
+            if id ~= notificationId then
+                return
+            end
+
+            Animate(Notification, {
+                Position = UDim2.new(0.5, 0x0, 0x1, 0x37)
+            }, 0.2)
+
+            task.wait(0.22)
+
+            if id == notificationId then
+                Notification.Visible = false
+            end
+        end)
+    end
+
+    --=========================================================
+    -- ONBOARDING
+    --=========================================================
+
+    local IntroWindow = New("\070\114\097\109\101", {
+        Name = "\079\110\098\111\097\114\100\105\110\103",
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Position = UDim2.fromScale(0.5, 0.5),
+        Size = UDim2.fromOffset(0x1E0, 0x230),
+        BackgroundColor3 = Config.Theme.Window,
+        BorderSizePixel = 0x0,
+        Visible = true,
+        ClipsDescendants = true
+    }, Gui)
+
+    Corner(IntroWindow, 0x12)
+    Stroke(IntroWindow, Config.Theme.Border, 0x1)
+
+    New("\085\073\083\105\122\101\067\111\110\115\116\114\097\105\110\116", {
+        MinSize = Vector2.new(0x140, 0x1A4),
+        MaxSize = Vector2.new(0x2F8, 0x2D0)
+    }, IntroWindow)
+
+    local IntroAspect = New("\085\073\065\115\112\101\099\116\082\097\116\105\111\067\111\110\115\116\114\097\105\110\116", {
+        AspectRatio = 0.86,
+        AspectType = Enum.AspectType.FitWithinMaxSize,
+        DominantAxis = Enum.DominantAxis.Width
+    }, IntroWindow)
+
+    local IntroHeader = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x46),
+        BackgroundColor3 = Config.Theme.Header,
+        BorderSizePixel = 0x0
+    }, IntroWindow)
+    Corner(IntroHeader, 0x12)
+
+    New("\070\114\097\109\101", {
+        Position = UDim2.new(0x0, 0x0, 0x1, -0x10),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x10),
+        BackgroundColor3 = Config.Theme.Header,
+        BorderSizePixel = 0x0
+    }, IntroHeader)
+
+    local introLogo = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0xD, 0xB),
+        Size = UDim2.fromOffset(0x2E, 0x2E),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0
+    }, IntroHeader)
+    Corner(introLogo, 0xD)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1,
+        Text = "\080\065",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xF,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1)
+    }, introLogo)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x46, 0xA),
+        Size = UDim2.new(0x1, -0x55, 0x0, 0x18),
+        BackgroundTransparency = 0x1,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x14,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, IntroHeader)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x46, 0x24),
+        Size = UDim2.new(0x1, -0x55, 0x0, 0x11),
+        BackgroundTransparency = 0x1,
+        Text = "\080\114\111\102\101\115\115\105\111\110\097\108\032\065\073\032\119\111\114\107\115\112\097\099\101",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, IntroHeader)
+
+    local IntroSteps = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0xC, 0x4E),
+        Size = UDim2.new(0x1, -0x18, 0x0, 0x23),
+        BackgroundTransparency = 0x1
+    }, IntroWindow)
+
+    New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+        FillDirection = Enum.FillDirection.Horizontal,
+        HorizontalAlignment = Enum.HorizontalAlignment.Center,
+        VerticalAlignment = Enum.VerticalAlignment.Center,
+        Padding = UDim.new(0x0, 0x5)
+    }, IntroSteps)
+
+    local StepButtons = {}
+    local StepNames = {"\073\078\084\082\079", "\083\084\069\080\032\049", "\083\084\069\080\032\050", "\083\084\069\080\032\051"}
+
+    for i, name in ipairs(StepNames) do
+        local b = New("\084\101\120\116\066\117\116\116\111\110", {
+            Size = UDim2.new(0.25, -0x4, 0x1, 0x0),
+            BackgroundColor3 = Color3.fromRGB(0x1B, 0x1C, 0x22),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = name,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x8,
+            TextColor3 = Config.Theme.SubText
+        }, IntroSteps)
+        Corner(b, 0x8)
+        StepButtons[i] = b
+    end
+
+    local IntroPages = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0xC, 0x7A),
+        Size = UDim2.new(0x1, -0x18, 0x1, -0xB6),
+        BackgroundTransparency = 0x1,
+        ClipsDescendants = true
+    }, IntroWindow)
+
+    local function NewPage()
+        local p = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+            Size = UDim2.fromScale(0x1, 0x1),
+            BackgroundTransparency = 0x1,
+            BorderSizePixel = 0x0,
+            ScrollBarThickness = 0x3,
+            ScrollBarImageColor3 = Color3.fromRGB(0x46, 0x47, 0x52),
+            AutomaticCanvasSize = Enum.AutomaticSize.Y,
+            CanvasSize = UDim2.new(),
+            Visible = false,
+            ScrollingDirection = Enum.ScrollingDirection.Y
+        }, IntroPages)
+
+        New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+            Padding = UDim.new(0x0, 0x9),
+            SortOrder = Enum.SortOrder.LayoutOrder
+        }, p)
+
+        Pad(p, 0x3, 0x12, 0x3, 0x3)
+        return p
+    end
+
+    local IntroPage = NewPage()
+    local ApiPage = NewPage()
+    local ModePage = NewPage()
+    local VerifyPage = NewPage()
+
+    -- Intro page
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2C),
+        BackgroundTransparency = 0x1,
+        Text = "\087\069\076\067\079\077\069\032\084\079\032\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x19,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        LayoutOrder = 0x1
+    }, IntroPage)
+
+    local introDesc = New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x42),
+        BackgroundTransparency = 0x1,
+        Text = "\080\111\108\105\032\065\073\032\105\115\032\121\111\117\114\032\099\117\115\116\111\109\105\122\097\098\108\101\032\065\073\032\119\111\114\107\115\112\097\099\101\032\102\111\114\032\099\111\100\105\110\103\044\032\116\097\108\107\105\110\103\044\032\082\111\098\108\111\120\032\100\101\118\101\108\111\112\109\101\110\116\044\032\112\114\111\102\101\115\115\105\111\110\097\108\032\097\110\115\119\101\114\115\044\032\114\101\115\101\097\114\099\104\045\115\116\121\108\101\032\113\117\101\115\116\105\111\110\115\044\032\100\101\098\117\103\103\105\110\103\044\032\097\110\100\032\099\114\101\097\116\105\118\101\032\119\111\114\107\046",
+        TextWrapped = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 0xC,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x2
+    }, IntroPage)
+
+    local introCard = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x113),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        LayoutOrder = 0x3
+    }, IntroPage)
+    Corner(introCard, 0xD)
+    Stroke(introCard, Config.Theme.Border, 0x1)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0xA),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x14),
+        BackgroundTransparency = 0x1,
+        Text = "\087\072\065\084\032\080\079\076\073\032\065\073\032\067\065\078\032\068\079",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.Accent,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, introCard)
+
+    local introFeatures = {
+        "\067\079\068\073\078\071\032\045\032\119\114\105\116\101\044\032\101\120\112\108\097\105\110\044\032\114\101\112\097\105\114\032\097\110\100\032\105\109\112\114\111\118\101\032\099\111\100\101",
+        "\082\079\066\076\079\088\032\045\032\076\117\097\117\032\115\099\114\105\112\116\115\044\032\085\073\044\032\115\121\115\116\101\109\115\032\097\110\100\032\103\097\109\101\032\105\100\101\097\115",
+        "\084\065\076\075\073\078\071\032\045\032\110\111\114\109\097\108\032\113\117\101\115\116\105\111\110\115\032\097\110\100\032\099\111\110\118\101\114\115\097\116\105\111\110\115",
+        "\080\082\079\070\069\083\083\073\079\078\065\076\032\045\032\115\116\114\117\099\116\117\114\101\100\032\097\110\115\119\101\114\115\032\097\110\100\032\116\101\099\104\110\105\099\097\108\032\104\101\108\112",
+        "\083\069\065\082\067\072\073\078\071\032\045\032\115\101\097\114\099\104\045\099\097\112\097\098\108\101\032\065\073\032\102\111\114\032\114\101\115\101\097\114\099\104\032\114\101\113\117\101\115\116\115",
+        "\084\072\073\078\075\073\078\071\032\045\032\112\114\111\102\101\115\115\105\111\110\097\108\032\114\101\097\115\111\110\105\110\103\045\111\114\105\101\110\116\101\100\032\119\111\114\107\102\108\111\119",
+        "\065\068\086\065\078\067\069\068\032\045\032\101\100\105\116\032\112\101\114\115\111\110\097\044\032\112\114\111\109\112\116\044\032\109\111\100\101\108\032\097\110\100\032\065\080\073\032\107\101\121",
+        "\084\069\067\072\032\045\032\111\112\116\105\111\110\097\108\032\109\111\118\101\109\101\110\116\032\097\110\100\032\099\104\097\116\032\099\111\110\116\114\111\108\115"
+    }
+
+    for i, text in ipairs(introFeatures) do
+        New("\084\101\120\116\076\097\098\101\108", {
+            Position = UDim2.fromOffset(0xD, 0x26 + (i - 0x1) * 0x1C),
+            Size = UDim2.new(0x1, -0x1A, 0x0, 0x18),
+            BackgroundTransparency = 0x1,
+            Text = text,
+            Font = Enum.Font.GothamMedium,
+            TextSize = 0xA,
+            TextColor3 = Config.Theme.Text,
+            TextXAlignment = Enum.TextXAlignment.Left
+        }, introCard)
+    end
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x3C),
+        BackgroundColor3 = Color3.fromRGB(0x18, 0x19, 0x20),
+        BorderSizePixel = 0x0,
+        Text = "\078\101\120\116\044\032\080\111\108\105\032\065\073\032\119\105\108\108\032\097\115\107\032\102\111\114\032\121\111\117\114\032\065\080\073\032\107\101\121\044\032\108\101\116\032\121\111\117\032\099\104\111\111\115\101\032\097\032\109\111\100\101\044\032\097\110\100\032\114\117\110\032\097\032\108\111\099\097\108\032\104\117\109\097\110\032\118\101\114\105\102\105\099\097\116\105\111\110\032\099\104\097\108\108\101\110\103\101\046",
+        TextWrapped = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Center,
+        LayoutOrder = 0x4
+    }, IntroPage)
+    Corner(IntroPage:FindFirstChildWhichIsA("\084\101\120\116\076\097\098\101\108"), 0x0)
+
+    -- API page
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2A),
+        BackgroundTransparency = 0x1,
+        Text = "\083\084\069\080\032\049\032\045\032\067\079\078\078\069\067\084\032\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x17,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        LayoutOrder = 0x1
+    }, ApiPage)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x34),
+        BackgroundTransparency = 0x1,
+        Text = "\069\110\116\101\114\032\121\111\117\114\032\111\119\110\032\080\111\108\108\105\110\097\116\105\111\110\115\032\065\080\073\032\107\101\121\046\032\084\104\101\032\107\101\121\032\105\115\032\115\101\110\116\032\097\115\032\097\032\066\101\097\114\101\114\032\116\111\107\101\110\032\119\105\116\104\032\065\073\032\114\101\113\117\101\115\116\115\046",
+        TextWrapped = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 0xB,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x2
+    }, ApiPage)
+
+    local ApiHolder = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x3C),
+        BackgroundColor3 = Config.Theme.Input,
+        BorderSizePixel = 0x0,
+        LayoutOrder = 0x3
+    }, ApiPage)
+    Corner(ApiHolder, 0xB)
+    Stroke(ApiHolder, Config.Theme.Border, 0x1)
+
+    local ApiBox = New("\084\101\120\116\066\111\120", {
+        Position = UDim2.fromOffset(0xC, 0x7),
+        Size = UDim2.new(0x1, -0x68, 0x1, -0xE),
+        BackgroundTransparency = 0x1,
+        Text = "",
+        PlaceholderText = "\080\097\115\116\101\032\065\080\073\032\107\101\121",
+        PlaceholderColor3 = Config.Theme.SubText,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0xC,
+        TextColor3 = Config.Theme.Text,
+        ClearTextOnFocus = false,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, ApiHolder)
+
+    local ApiMask = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xC, 0x7),
+        Size = UDim2.new(0x1, -0x68, 0x1, -0xE),
+        BackgroundTransparency = 0x1,
+        Text = "",
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0xC,
+        TextColor3 = Config.Theme.Text,
+        Visible = false,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, ApiHolder)
+
+    local ApiShow = New("\084\101\120\116\066\117\116\116\111\110", {
+        AnchorPoint = Vector2.new(0x1, 0.5),
+        Position = UDim2.new(0x1, -0x8, 0.5, 0x0),
+        Size = UDim2.fromOffset(0x4A, 0x24),
+        BackgroundColor3 = Color3.fromRGB(0x1F, 0x20, 0x27),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\083\072\079\087",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.Text
+    }, ApiHolder)
+    Corner(ApiShow, 0x8)
+
+    local ApiVisible = false
+
+    local function SyncApiMask()
+        if ApiVisible then
+            ApiBox.Visible = true
+            ApiMask.Visible = false
+            ApiShow.Text = "\072\073\068\069"
+        else
+            ApiBox.Visible = false
+            ApiMask.Visible = true
+            ApiMask.Text = (#Config.APIKey == 0x0)
+                and "\078\111\032\065\080\073\032\107\101\121\032\101\110\116\101\114\101\100"
+                or string.rep("\042", math.min(#Config.APIKey, 0x30))
+            ApiShow.Text = "\083\072\079\087"
+        end
+    end
+
+    ApiShow.MouseButton1Click:Connect(function()
+        ApiVisible = not ApiVisible
+        SyncApiMask()
+    end)
+
+    ApiBox.FocusLost:Connect(function()
+        Config.APIKey = Trim(ApiBox.Text)
+        SyncApiMask()
+    end)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x4B),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        Text = "\075\069\089\032\083\065\070\069\084\089\092\110\092\110\085\115\101\032\097\032\107\101\121\032\121\111\117\032\097\114\101\032\099\111\109\102\111\114\116\097\098\108\101\032\117\115\105\110\103\032\105\110\032\097\032\099\108\105\101\110\116\045\115\105\100\101\032\115\099\114\105\112\116\046\032\068\111\032\110\111\116\032\112\117\098\108\105\115\104\032\115\101\099\114\101\116\032\099\114\101\100\101\110\116\105\097\108\115\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.SubText,
+        TextWrapped = true,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x4
+    }, ApiPage)
+    Corner(ApiPage:FindFirstChild("\075\069\089\032\083\065\070\069\084\089"), 0x0)
+
+    SyncApiMask()
+
+    -- Mode page
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2A),
+        BackgroundTransparency = 0x1,
+        Text = "\083\084\069\080\032\050\032\045\032\067\072\079\079\083\069\032\065\032\077\079\068\069",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x17,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        LayoutOrder = 0x1
+    }, ModePage)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2D),
+        BackgroundTransparency = 0x1,
+        Text = "\084\104\105\110\107\105\110\103\032\105\115\032\102\111\114\032\112\114\111\102\101\115\115\105\111\110\097\108\032\065\073\032\119\111\114\107\046\032\083\101\097\114\099\104\105\110\103\032\105\115\032\102\111\114\032\114\101\115\101\097\114\099\104\045\115\116\121\108\101\032\114\101\113\117\101\115\116\115\032\116\104\097\116\032\110\101\101\100\032\115\101\097\114\099\104\045\099\097\112\097\098\108\101\032\065\073\046",
+        TextWrapped = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 0xB,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x2
+    }, ModePage)
+
+    local ThinkCard = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x70),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "",
+        LayoutOrder = 0x3
+    }, ModePage)
+    Corner(ThinkCard, 0xD)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0xC),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x16),
+        BackgroundTransparency = 0x1,
+        Text = "\084\072\073\078\075\073\078\071\032\077\079\068\069",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xF,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1),
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, ThinkCard)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0x28),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x3A),
+        BackgroundTransparency = 0x1,
+        Text = "\080\114\111\102\101\115\115\105\111\110\097\108\032\119\111\114\107\102\108\111\119\032\102\111\114\032\099\111\100\105\110\103\044\032\101\120\112\108\097\110\097\116\105\111\110\115\044\032\100\101\098\117\103\103\105\110\103\044\032\119\114\105\116\105\110\103\044\032\112\108\097\110\110\105\110\103\044\032\097\110\100\032\103\101\110\101\114\097\108\032\097\115\115\105\115\116\097\110\099\101\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextWrapped = true,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top
+    }, ThinkCard)
+
+    local SearchCard = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x70),
+        BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x24),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "",
+        LayoutOrder = 0x4
+    }, ModePage)
+    Corner(SearchCard, 0xD)
+    Stroke(SearchCard, Config.Theme.Border, 0x1)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0xC),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x16),
+        BackgroundTransparency = 0x1,
+        Text = "\083\069\065\082\067\072\073\078\071\032\077\079\068\069",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xF,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, SearchCard)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0x28),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x3A),
+        BackgroundTransparency = 0x1,
+        Text = "\085\115\101\032\097\032\115\101\097\114\099\104\045\099\097\112\097\098\108\101\032\065\073\032\109\111\100\101\108\032\102\111\114\032\114\101\115\101\097\114\099\104\045\115\116\121\108\101\032\114\101\113\117\101\115\116\115\032\097\110\100\032\099\117\114\114\101\110\116\045\105\110\102\111\114\109\097\116\105\111\110\032\119\111\114\107\102\108\111\119\115\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextWrapped = true,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top
+    }, SearchCard)
+
+    local function SelectMode(mode)
+        Config.Mode = mode
+
+        if mode == "\084\104\105\110\107\105\110\103" then
+            Config.Model = Config.ThinkingModel
+
+            Animate(ThinkCard, {
+                BackgroundColor3 = Config.Theme.Accent
+            }, 0.12)
+
+            Animate(SearchCard, {
+                BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x24)
+            }, 0.12)
+        else
+            Config.Model = Config.SearchingModel
+
+            Animate(SearchCard, {
+                BackgroundColor3 = Config.Theme.Accent
+            }, 0.12)
+
+            Animate(ThinkCard, {
+                BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x24)
+            }, 0.12)
+        end
+    end
+
+    ThinkCard.MouseButton1Click:Connect(function()
+        SelectMode("\084\104\105\110\107\105\110\103")
+    end)
+
+    SearchCard.MouseButton1Click:Connect(function()
+        SelectMode("\083\101\097\114\099\104\105\110\103")
+    end)
+
+    SelectMode("\084\104\105\110\107\105\110\103")
+
+    -- Verification page
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2A),
+        BackgroundTransparency = 0x1,
+        Text = "\083\084\069\080\032\051\032\045\032\072\085\077\065\078\032\086\069\082\073\070\073\067\065\084\073\079\078",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x17,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        LayoutOrder = 0x1
+    }, VerifyPage)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x2D),
+        BackgroundTransparency = 0x1,
+        Text = "\067\111\109\112\108\101\116\101\032\116\104\105\115\032\108\111\099\097\108\032\099\104\097\108\108\101\110\103\101\046\032\073\102\032\105\116\032\102\097\105\108\115\044\032\112\114\101\115\115\032\082\069\084\082\089\032\102\111\114\032\097\032\110\101\119\032\099\104\097\108\108\101\110\103\101\046",
+        TextWrapped = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 0xB,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        LayoutOrder = 0x2
+    }, VerifyPage)
+
+    local VerifyCard = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0xD7),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        LayoutOrder = 0x3
+    }, VerifyPage)
+    Corner(VerifyCard, 0xD)
+    Stroke(VerifyCard, Config.Theme.Border, 0x1)
+
+    local VerifyQuestion = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0xD),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x1E),
+        BackgroundTransparency = 0x1,
+        Text = "\081\085\069\083\084\073\079\078",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x10,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, VerifyCard)
+
+    local VerifyBox = New("\084\101\120\116\066\111\120", {
+        Position = UDim2.fromOffset(0xD, 0x3A),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x30),
+        BackgroundColor3 = Config.Theme.Input,
+        BorderSizePixel = 0x0,
+        Text = "",
+        PlaceholderText = "\069\110\116\101\114\032\097\110\115\119\101\114",
+        PlaceholderColor3 = Config.Theme.SubText,
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xF,
+        TextColor3 = Config.Theme.Text,
+        ClearTextOnFocus = false
+    }, VerifyCard)
+    Corner(VerifyBox, 0x9)
+
+    local VerifyButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        Position = UDim2.fromOffset(0xD, 0x76),
+        Size = UDim2.new(0.5, -0x11, 0x0, 0x26),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\086\069\082\073\070\089",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1)
+    }, VerifyCard)
+    Corner(VerifyButton, 0x9)
+
+    local RetryButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        Position = UDim2.new(0.5, 0x4, 0x0, 0x76),
+        Size = UDim2.new(0.5, -0x11, 0x0, 0x26),
+        BackgroundColor3 = Color3.fromRGB(0x1E, 0x1F, 0x26),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\082\069\084\082\089",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.Text
+    }, VerifyCard)
+    Corner(RetryButton, 0x9)
+
+    local VerifyStatus = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0xD, 0xA7),
+        Size = UDim2.new(0x1, -0x1A, 0x0, 0x1E),
+        BackgroundTransparency = 0x1,
+        Text = "\067\111\109\112\108\101\116\101\032\116\104\101\032\099\104\097\108\108\101\110\103\101\046",
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, VerifyCard)
+
+    local NumberA = 0x0
+    local NumberB = 0x0
+
+    local function NewChallenge()
+        NumberA = math.random(0x2, 0x14)
+        NumberB = math.random(0x2, 0x14)
+        VerifyQuestion.Text = "\087\072\065\084\032\073\083\032" .. NumberA .. "\032\043\032" .. NumberB .. "\032\063"
+        VerifyBox.Text = ""
+        State.Verified = false
+        VerifyStatus.Text = "\067\111\109\112\108\101\116\101\032\116\104\101\032\099\104\097\108\108\101\110\103\101\046"
+        VerifyStatus.TextColor3 = Config.Theme.SubText
+    end
+
+    NewChallenge()
+
+    local IntroFooter = New("\070\114\097\109\101", {
+        AnchorPoint = Vector2.new(0x0, 0x1),
+        Position = UDim2.new(0x0, 0x0, 0x1, 0x0),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x3A),
+        BackgroundColor3 = Config.Theme.Header,
+        BorderSizePixel = 0x0
+    }, IntroWindow)
+
+    New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x1),
+        BackgroundColor3 = Config.Theme.Border,
+        BorderSizePixel = 0x0
+    }, IntroFooter)
+
+    local IntroBack = New("\084\101\120\116\066\117\116\116\111\110", {
+        Position = UDim2.fromOffset(0xA, 0xA),
+        Size = UDim2.fromOffset(0x5A, 0x26),
+        BackgroundColor3 = Color3.fromRGB(0x1D, 0x1E, 0x25),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\066\065\067\075",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.Text,
+        Visible = false
+    }, IntroFooter)
+    Corner(IntroBack, 0x9)
+
+    local IntroNext = New("\084\101\120\116\066\117\116\116\111\110", {
+        AnchorPoint = Vector2.new(0x1, 0x0),
+        Position = UDim2.new(0x1, -0xA, 0x0, 0xA),
+        Size = UDim2.fromOffset(0x91, 0x26),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\071\069\084\032\083\084\065\082\084\069\068",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1)
+    }, IntroFooter)
+    Corner(IntroNext, 0x9)
+
+    local IntroIndex = 0x1
+
+    local function UpdateIntro()
+        IntroIndex = math.clamp(IntroIndex, 0x1, 0x4)
+        State.IntroPage = IntroIndex
+
+        local pages = {IntroPage, ApiPage, ModePage, VerifyPage}
+
+        for i, page in ipairs(pages) do
+            page.Visible = i == IntroIndex
+            if page.Visible then
+                page.CanvasPosition = Vector2.new(0x0, 0x0)
+            end
+        end
+
+        for i, button in ipairs(StepButtons) do
+            if i == IntroIndex then
+                Animate(button, {
+                    BackgroundColor3 = Config.Theme.Accent,
+                    TextColor3 = Color3.new(0x1, 0x1, 0x1)
+                }, 0.1)
+            else
+                Animate(button, {
+                    BackgroundColor3 = Color3.fromRGB(0x1B, 0x1C, 0x22),
+                    TextColor3 = Config.Theme.SubText
+                }, 0.1)
+            end
+        end
+
+        IntroBack.Visible = IntroIndex > 0x1
+
+        if IntroIndex == 0x1 then
+            IntroNext.Text = "\071\069\084\032\083\084\065\082\084\069\068"
+            IntroNext.Visible = true
+        elseif IntroIndex == 0x2 then
+            IntroNext.Text = "\078\069\088\084"
+            IntroNext.Visible = true
+        elseif IntroIndex == 0x3 then
+            IntroNext.Text = "\078\069\088\084"
+            IntroNext.Visible = true
+        else
+            IntroNext.Text = "\079\080\069\078\032\080\079\076\073\032\065\073"
+            IntroNext.Visible = State.Verified
+        end
+    end
+
+    VerifyButton.MouseButton1Click:Connect(function()
+        local answer = tonumber(Trim(VerifyBox.Text))
+
+        if answer == NumberA + NumberB then
+            State.Verified = true
+            VerifyStatus.Text = "\086\101\114\105\102\105\099\097\116\105\111\110\032\115\117\099\099\101\115\115\102\117\108\046"
+            VerifyStatus.TextColor3 = Config.Theme.Green
+            UpdateIntro()
+        else
+            State.Verified = false
+            VerifyStatus.Text = "\086\101\114\105\102\105\099\097\116\105\111\110\032\117\110\115\117\099\099\101\115\115\102\117\108\046\032\085\115\101\032\082\069\084\082\089\032\097\110\100\032\116\114\121\032\097\103\097\105\110\046"
+            VerifyStatus.TextColor3 = Config.Theme.Red
+            IntroNext.Visible = false
+        end
+    end)
+
+    RetryButton.MouseButton1Click:Connect(function()
+        NewChallenge()
+        UpdateIntro()
+    end)
+
+    for i, button in ipairs(StepButtons) do
+        button.MouseButton1Click:Connect(function()
+            if i == 0x1 or i <= IntroIndex then
+                IntroIndex = i
+                UpdateIntro()
+            end
+        end)
+    end
+
+    IntroNext.MouseButton1Click:Connect(function()
+        if IntroIndex == 0x1 then
+            IntroIndex = 0x2
+        elseif IntroIndex == 0x2 then
+            Config.APIKey = Trim(ApiBox.Text)
+            if Config.APIKey == "" then
+                Notify("\069\110\116\101\114\032\121\111\117\114\032\065\080\073\032\107\101\121\032\102\105\114\115\116")
+                return
+            end
+            IntroIndex = 0x3
+        elseif IntroIndex == 0x3 then
+            IntroIndex = 0x4
+        elseif IntroIndex == 0x4 then
+            if not State.Verified then
+                Notify("\067\111\109\112\108\101\116\101\032\118\101\114\105\102\105\099\097\116\105\111\110\032\102\105\114\115\116")
+                return
+            end
+            IntroWindow.Visible = false
+            State.WindowOpen = true
+            if MainWindow then
+                MainWindow.Visible = true
+            end
+            Notify("\080\111\108\105\032\065\073\032\111\112\101\110\101\100")
+        end
+
+        UpdateIntro()
+    end)
+
+    IntroBack.MouseButton1Click:Connect(function()
+        IntroIndex = IntroIndex - 0x1
+        UpdateIntro()
+    end)
+
+    UpdateIntro()
+
+    --=========================================================
+    -- MAIN WINDOW
+    --=========================================================
+
+    MainWindow = New("\070\114\097\109\101", {
+        Name = "\077\097\105\110\087\105\110\100\111\119",
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Position = UDim2.fromScale(0.5, 0.5),
+        Size = UDim2.fromOffset(0x26C, 0x1F4),
+        BackgroundColor3 = Config.Theme.Window,
+        BorderSizePixel = 0x0,
+        Visible = false,
+        ClipsDescendants = true
+    }, Gui)
+
+    Corner(MainWindow, 0x12)
+    Stroke(MainWindow, Config.Theme.Border, 0x1)
+
+    New("\085\073\083\105\122\101\067\111\110\115\116\114\097\105\110\116", {
+        MinSize = Vector2.new(0x140, 0x190),
+        MaxSize = Vector2.new(0x41A, 0x320)
+    }, MainWindow)
+
+    local MainAspect = New("\085\073\065\115\112\101\099\116\082\097\116\105\111\067\111\110\115\116\114\097\105\110\116", {
+        AspectRatio = 1.24,
+        AspectType = Enum.AspectType.FitWithinMaxSize,
+        DominantAxis = Enum.DominantAxis.Width
+    }, MainWindow)
+
+    local MainHeader = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x3C),
+        BackgroundColor3 = Config.Theme.Header,
+        BorderSizePixel = 0x0
+    }, MainWindow)
+    Corner(MainHeader, 0x12)
+
+    New("\070\114\097\109\101", {
+        Position = UDim2.new(0x0, 0x0, 0x1, -0x11),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x11),
+        BackgroundColor3 = Config.Theme.Header,
+        BorderSizePixel = 0x0
+    }, MainHeader)
+
+    local mainLogo = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0xB, 0xB),
+        Size = UDim2.fromOffset(0x26, 0x26),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0
+    }, MainHeader)
+    Corner(mainLogo, 0xA)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1,
+        Text = "\080\065",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xC,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1)
+    }, mainLogo)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x3A, 0x9),
+        Size = UDim2.new(0x0, 0xBE, 0x0, 0x16),
+        BackgroundTransparency = 0x1,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x11,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, MainHeader)
+
+    local HeaderStatus = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x3A, 0x20),
+        Size = UDim2.new(0x0, 0x104, 0x0, 0x10),
+        BackgroundTransparency = 0x1,
+        Text = "\082\069\065\068\089",
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.Green,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, MainHeader)
+
+    local MainHeaderButtons = New("\070\114\097\109\101", {
+        AnchorPoint = Vector2.new(0x1, 0.5),
+        Position = UDim2.new(0x1, -0x8, 0.5, 0x0),
+        Size = UDim2.fromOffset(0xB4, 0x28),
+        BackgroundTransparency = 0x1
+    }, MainHeader)
+
+    New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+        FillDirection = Enum.FillDirection.Horizontal,
+        HorizontalAlignment = Enum.HorizontalAlignment.Right,
+        VerticalAlignment = Enum.VerticalAlignment.Center,
+        Padding = UDim.new(0x0, 0x4)
+    }, MainHeaderButtons)
+
+    local function MainButton(text)
+        local b = New("\084\101\120\116\066\117\116\116\111\110", {
+            Size = UDim2.fromOffset(0x36, 0x20),
+            BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x23),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = text,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x8,
+            TextColor3 = Config.Theme.Text
+        }, MainHeaderButtons)
+        Corner(b, 0x8)
+        return b
+    end
+
+    local NewChatButton = MainButton("\078\069\087")
+    local MinButton = MainButton("\077\073\078")
+    local CloseButton = MainButton("\067\076\079\083\069")
+
+    --=========================================================
+    -- CONTENT / SIDEBAR
+    --=========================================================
+
+    local Body = New("\070\114\097\109\101", {
+        Position = UDim2.new(0x0, 0x0, 0x0, 0x3C),
+        Size = UDim2.new(0x1, 0x0, 0x1, -0x3C),
+        BackgroundTransparency = 0x1
+    }, MainWindow)
+
+    local Sidebar = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x7, 0x7),
+        Size = UDim2.new(0x0, 0x6C, 0x1, -0xE),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0
+    }, Body)
+    Corner(Sidebar, 0xC)
+    Stroke(Sidebar, Config.Theme.Border, 0x1)
+
+    local SidebarList = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x6, 0x32),
+        Size = UDim2.new(0x1, -0xC, 0x1, -0x64),
+        BackgroundTransparency = 0x1
+    }, Sidebar)
+
+    New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+        Padding = UDim.new(0x0, 0x5),
+        SortOrder = Enum.SortOrder.LayoutOrder
+    }, SidebarList)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x8, 0x9),
+        Size = UDim2.new(0x1, -0x10, 0x0, 0x1A),
+        BackgroundTransparency = 0x1,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xD,
+        TextColor3 = Config.Theme.Text,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, Sidebar)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x8, 0x1F),
+        Size = UDim2.new(0x1, -0x10, 0x0, 0x10),
+        BackgroundTransparency = 0x1,
+        Text = "\065\083\083\073\083\084\065\078\084",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x7,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, Sidebar)
+
+    local SidebarStatus = New("\084\101\120\116\076\097\098\101\108", {
+        AnchorPoint = Vector2.new(0x0, 0x1),
+        Position = UDim2.new(0x0, 0x8, 0x1, -0x8),
+        Size = UDim2.new(0x1, -0x10, 0x0, 0x19),
+        BackgroundTransparency = 0x1,
+        Text = "\079\078\076\073\078\069\032\047\032\082\069\065\068\089",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x7,
+        TextColor3 = Config.Theme.Green,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, Sidebar)
+
+    local TabPages = New("\070\114\097\109\101", {
+        Position = UDim2.new(0x0, 0x7A, 0x0, 0x7),
+        Size = UDim2.new(0x1, -0x81, 0x1, -0xE),
+        BackgroundTransparency = 0x1,
+        ClipsDescendants = true
+    }, Body)
+
+    local MainPage = New("\070\114\097\109\101", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1
+    }, TabPages)
+
+    local AdvancePage = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1,
+        BorderSizePixel = 0x0,
+        ScrollBarThickness = 0x3,
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        CanvasSize = UDim2.new()
+    }, TabPages)
+
+    local SettingsPage = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1,
+        BorderSizePixel = 0x0,
+        ScrollBarThickness = 0x3,
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        CanvasSize = UDim2.new()
+    }, TabPages)
+
+    local TechPage = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1,
+        BorderSizePixel = 0x0,
+        ScrollBarThickness = 0x3,
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        CanvasSize = UDim2.new()
+    }, TabPages)
+
+    local CreditPage = New("\070\114\097\109\101", {
+        Size = UDim2.fromScale(0x1, 0x1),
+        BackgroundTransparency = 0x1
+    }, TabPages)
+
+    local Pages = {
+        MAIN = MainPage,
+        ADVANCE = AdvancePage,
+        SETTINGS = SettingsPage,
+        TECH = TechPage,
+        CREDIT = CreditPage
+    }
+
+    for _, p in pairs({AdvancePage, SettingsPage, TechPage}) do
+        Pad(p, 0x5, 0x14, 0x5, 0x5)
+        New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+            Padding = UDim.new(0x0, 0x8),
+            SortOrder = Enum.SortOrder.LayoutOrder
+        }, p)
+    end
+
+    local Tabs = {}
+
+    for _, name in ipairs({"\077\065\073\078", "\065\068\086\065\078\067\069", "\083\069\084\084\073\078\071\083", "\084\069\067\072", "\067\082\069\068\073\084"}) do
+        local b = New("\084\101\120\116\066\117\116\116\111\110", {
+            Size = UDim2.new(0x1, 0x0, 0x0, 0x28),
+            BackgroundColor3 = Color3.fromRGB(0x19, 0x1A, 0x20),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = name,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x8,
+            TextColor3 = Config.Theme.SubText,
+            LayoutOrder = #Tabs + 0x1
+        }, SidebarList)
+        Corner(b, 0x8)
+        Tabs[name] = b
+    end
+
+    --=========================================================
+    -- MAIN PAGE
+    --=========================================================
+
+    local TopControls = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x5, 0x4),
+        Size = UDim2.new(0x1, -0xA, 0x0, 0x22),
+        BackgroundTransparency = 0x1
+    }, MainPage)
+
+    local ViewThinking = New("\084\101\120\116\066\117\116\116\111\110", {
+        Position = UDim2.fromOffset(0x0, 0x0),
+        Size = UDim2.fromOffset(0x7E, 0x1E),
+        BackgroundColor3 = Color3.fromRGB(0x1A, 0x1B, 0x22),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\086\073\069\087\032\084\072\073\078\075\073\078\071",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Config.Theme.SubText
+    }, TopControls)
+    Corner(ViewThinking, 0x8)
+
+    local ViewSearching = New("\084\101\120\116\066\117\116\116\111\110", {
+        Position = UDim2.fromOffset(0x83, 0x0),
+        Size = UDim2.fromOffset(0x88, 0x1E),
+        BackgroundColor3 = Color3.fromRGB(0x1A, 0x1B, 0x22),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\086\073\069\087\032\083\069\065\082\067\072\073\078\071",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Config.Theme.SubText
+    }, TopControls)
+    Corner(ViewSearching, 0x8)
+
+    local ModeLabel = New("\084\101\120\116\076\097\098\101\108", {
+        AnchorPoint = Vector2.new(0x1, 0x0),
+        Position = UDim2.new(0x1, 0x0, 0x0, 0x0),
+        Size = UDim2.fromOffset(0xA0, 0x1E),
+        BackgroundTransparency = 0x1,
+        Text = "\077\079\068\069\058\032\084\072\073\078\075\073\078\071",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Config.Theme.Accent,
+        TextXAlignment = Enum.TextXAlignment.Right
+    }, TopControls)
+
+    local ActivityPanel = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x5, 0x27),
+        Size = UDim2.new(0x1, -0xA, 0x0, 0x44),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        Visible = false
+    }, MainPage)
+    Corner(ActivityPanel, 0xA)
+    Stroke(ActivityPanel, Config.Theme.Border, 0x1)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x9, 0x7),
+        Size = UDim2.new(0x1, -0x12, 0x0, 0xF),
+        BackgroundTransparency = 0x1,
+        Text = "\080\082\079\067\069\083\083\032\083\084\065\084\085\083",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x7,
+        TextColor3 = Config.Theme.Accent,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, ActivityPanel)
+
+    local ActivityText = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x9, 0x18),
+        Size = UDim2.new(0x1, -0x12, 0x1, -0x1E),
+        BackgroundTransparency = 0x1,
+        Text = "\073\100\108\101",
+        Font = Enum.Font.Gotham,
+        TextSize = 0x9,
+        TextWrapped = true,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top
+    }, ActivityPanel)
+
+    local SearchPanel = New("\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x5, 0x27),
+        Size = UDim2.new(0x1, -0xA, 0x0, 0x76),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        Visible = false
+    }, MainPage)
+    Corner(SearchPanel, 0xA)
+    Stroke(SearchPanel, Config.Theme.Border, 0x1)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x9, 0x7),
+        Size = UDim2.new(0x1, -0x12, 0x0, 0xF),
+        BackgroundTransparency = 0x1,
+        Text = "\083\069\065\082\067\072\032\083\084\065\084\085\083",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x7,
+        TextColor3 = Config.Theme.Accent,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, SearchPanel)
+
+    local SearchText = New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.fromOffset(0x9, 0x18),
+        Size = UDim2.new(0x1, -0x12, 0x0, 0x22),
+        BackgroundTransparency = 0x1,
+        Text = "\078\111\032\115\101\097\114\099\104\032\097\099\116\105\118\105\116\121\032\121\101\116\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0x9,
+        TextWrapped = true,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Left
+    }, SearchPanel)
+
+    local SearchLinks = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x8, 0x3D),
+        Size = UDim2.new(0x1, -0x10, 0x0, 0x32),
+        BackgroundTransparency = 0x1,
+        BorderSizePixel = 0x0,
+        ScrollBarThickness = 0x2,
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        CanvasSize = UDim2.new()
+    }, SearchPanel)
+
+    New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+        Padding = UDim.new(0x0, 0x3),
+        SortOrder = Enum.SortOrder.LayoutOrder
+    }, SearchLinks)
+
+    local MessageStartY = 0x27
+    local messageStartOffset = 0x0
+
+    local Messages = New("\083\099\114\111\108\108\105\110\103\070\114\097\109\101", {
+        Position = UDim2.fromOffset(0x4, MessageStartY),
+        Size = UDim2.new(0x1, -0x8, 0x1, -0x69),
+        BackgroundTransparency = 0x1,
+        BorderSizePixel = 0x0,
+        ScrollBarThickness = 0x3,
+        ScrollBarImageColor3 = Color3.fromRGB(0x46, 0x47, 0x52),
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        CanvasSize = UDim2.new(),
+        ScrollingDirection = Enum.ScrollingDirection.Y
+    }, MainPage)
+
+    New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+        Padding = UDim.new(0x0, 0x8),
+        SortOrder = Enum.SortOrder.LayoutOrder
+    }, Messages)
+    Pad(Messages, 0x3, 0xE, 0x3, 0x3)
+
+    local EmptyChat = New("\070\114\097\109\101", {
+        Size = UDim2.new(0x1, -0x6, 0x0, 0xAA),
+        BackgroundTransparency = 0x1,
+        LayoutOrder = -0x3E7
+    }, Messages)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.new(0x0, 0x0, 0x0, 0x14),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x26),
+        BackgroundTransparency = 0x1,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x1B,
+        TextColor3 = Config.Theme.Text
+    }, EmptyChat)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.new(0x0, 0xC, 0x0, 0x42),
+        Size = UDim2.new(0x1, -0x18, 0x0, 0x34),
+        BackgroundTransparency = 0x1,
+        Text = "\065\115\107\032\080\111\108\105\032\065\073\032\116\111\032\099\111\100\101\044\032\100\101\098\117\103\044\032\101\120\112\108\097\105\110\044\032\114\101\115\101\097\114\099\104\044\032\112\108\097\110\044\032\116\097\108\107\044\032\111\114\032\112\101\114\102\111\114\109\032\097\032\114\101\113\117\101\115\116\101\100\032\108\111\099\097\108\032\097\099\116\105\111\110\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xB,
+        TextWrapped = true,
+        TextColor3 = Config.Theme.SubText
+    }, EmptyChat)
+
+    local InputFrame = New("\070\114\097\109\101", {
+        AnchorPoint = Vector2.new(0x0, 0x1),
+        Position = UDim2.new(0x0, 0x4, 0x1, -0x4),
+        Size = UDim2.new(0x1, -0x8, 0x0, 0x38),
+        BackgroundColor3 = Config.Theme.Input,
+        BorderSizePixel = 0x0
+    }, MainPage)
+    Corner(InputFrame, 0xD)
+    Stroke(InputFrame, Config.Theme.Border, 0x1)
+
+    local InputBox = New("\084\101\120\116\066\111\120", {
+        Position = UDim2.fromOffset(0xC, 0x7),
+        Size = UDim2.new(0x1, -0x70, 0x1, -0xE),
+        BackgroundTransparency = 0x1,
+        Text = "",
+        PlaceholderText = "\065\115\107\032\080\111\108\105\032\065\073\032\097\110\121\116\104\105\110\103\046\046\046",
+        PlaceholderColor3 = Config.Theme.SubText,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 0xD,
+        TextColor3 = Config.Theme.Text,
+        TextWrapped = true,
+        MultiLine = true,
+        ClearTextOnFocus = false,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Center
+    }, InputFrame)
+
+    local InputCount = New("\084\101\120\116\076\097\098\101\108", {
+        AnchorPoint = Vector2.new(0x1, 0x1),
+        Position = UDim2.new(0x1, -0x3C, 0x1, -0x3),
+        Size = UDim2.fromOffset(0x55, 0xA),
+        BackgroundTransparency = 0x1,
+        Text = "\048\047\052\053\048\048",
+        Font = Enum.Font.Gotham,
+        TextSize = 0x7,
+        TextColor3 = Config.Theme.SubText,
+        TextXAlignment = Enum.TextXAlignment.Right
+    }, InputFrame)
+
+    local SendButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        AnchorPoint = Vector2.new(0x1, 0.5),
+        Position = UDim2.new(0x1, -0x8, 0.5, 0x0),
+        Size = UDim2.fromOffset(0x2F, 0x28),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\083\069\078\068",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1)
+    }, InputFrame)
+    Corner(SendButton, 0xA)
+
+    local function SetActivity(text)
+        ActivityText.Text = tostring(text)
+        if State.ActivityVisible then
+            ActivityPanel.Visible = true
+        end
+    end
+
+    --=========================================================
+    -- MAIN MESSAGES
+    --=========================================================
+
+    local MessageOrder = 0x0
+
+    local function ScrollBottom()
+        task.defer(function()
+            RunService.Heartbeat:Wait()
+
+            local maxY = math.max(
+                0x0,
+                Messages.AbsoluteCanvasSize.Y
+                    - Messages.AbsoluteWindowSize.Y
+            )
+
+            Messages.CanvasPosition = Vector2.new(0x0, maxY)
+        end)
+    end
+
+    local function FormatText(text)
+        text = Escape(text)
+
+        text = text:gsub("\037\042\037\042\040\091\094\037\042\093\043\041\037\042\037\042", "\060\098\062\037\049\060\047\098\062")
+        text = text:gsub("\096\040\091\094\096\092\110\093\043\041\096", "\060\102\111\110\116\032\102\097\099\101\061\034\067\111\100\101\034\032\099\111\108\111\114\061\034\035\067\056\067\068\070\070\034\062\037\049\060\047\102\111\110\116\062")
+        text = text:gsub("\092\110\035\035\035\032\040\091\094\092\110\093\043\041", "\092\110\060\102\111\110\116\032\115\105\122\101\061\034\049\054\034\062\060\098\062\037\049\060\047\098\062\060\047\102\111\110\116\062")
+        text = text:gsub("\092\110\035\035\032\040\091\094\092\110\093\043\041", "\092\110\060\102\111\110\116\032\115\105\122\101\061\034\049\056\034\062\060\098\062\037\049\060\047\098\062\060\047\102\111\110\116\062")
+        text = text:gsub("\092\110\035\032\040\091\094\092\110\093\043\041", "\092\110\060\102\111\110\116\032\115\105\122\101\061\034\050\048\034\062\060\098\062\037\049\060\047\098\062\060\047\102\111\110\116\062")
+
+        return text
+    end
+
+    local function CreateCodeBox(parent, code, language)
+        local lines = 0x1
+        for _ in tostring(code):gmatch("\092\110") do
+            lines += 0x1
+        end
+
+        local height = math.clamp(0x2A + lines * 0x10, 0x46, 0x154)
+
+        local frame = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, 0x0, 0x0, height),
+            BackgroundColor3 = Config.Theme.Code,
+            BorderSizePixel = 0x0,
+            LayoutOrder = 0x0
+        }, parent)
+        Corner(frame, 0x9)
+        Stroke(frame, Config.Theme.Border, 0x1)
+
+        New("\084\101\120\116\076\097\098\101\108", {
+            Position = UDim2.fromOffset(0x8, 0x5),
+            Size = UDim2.new(0x1, -0x91, 0x0, 0x10),
+            BackgroundTransparency = 0x1,
+            Text = language ~= "" and ("\067\079\068\069\032\045\032" .. language) or "\067\079\068\069",
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x7,
+            TextColor3 = Config.Theme.Accent,
+            TextXAlignment = Enum.TextXAlignment.Left
+        }, frame)
+
+        local copy = New("\084\101\120\116\066\117\116\116\111\110", {
+            AnchorPoint = Vector2.new(0x1, 0x0),
+            Position = UDim2.new(0x1, -0x3E, 0x0, 0x5),
+            Size = UDim2.fromOffset(0x34, 0x16),
+            BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x23),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = "\067\079\080\089",
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x7,
+            TextColor3 = Config.Theme.Text
+        }, frame)
+        Corner(copy, 0x6)
+
+        local run = New("\084\101\120\116\066\117\116\116\111\110", {
+            AnchorPoint = Vector2.new(0x1, 0x0),
+            Position = UDim2.new(0x1, -0x6, 0x0, 0x5),
+            Size = UDim2.fromOffset(0x30, 0x16),
+            BackgroundColor3 = Color3.fromRGB(0x2F, 0x4F, 0x37),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = "\082\085\078",
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x7,
+            TextColor3 = Config.Theme.Green
+        }, frame)
+        Corner(run, 0x6)
+
+        local codeBox = New("\084\101\120\116\066\111\120", {
+            Position = UDim2.fromOffset(0x8, 0x1C),
+            Size = UDim2.new(0x1, -0x10, 0x1, -0x22),
+            BackgroundTransparency = 0x1,
+            Text = code,
+            Font = Enum.Font.Code,
+            TextSize = 0xB,
+            TextColor3 = Color3.fromRGB(0xCD, 0xD0, 0xDC),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextYAlignment = Enum.TextYAlignment.Top,
+            MultiLine = true,
+            TextWrapped = false,
+            ClearTextOnFocus = false,
+            TextEditable = false
+        }, frame)
+
+        copy.MouseButton1Click:Connect(function()
+            local ok, err = CopyText(code)
+            Notify(ok and "\067\111\100\101\032\099\111\112\105\101\100" or tostring(err))
+        end)
+
+        run.MouseButton1Click:Connect(function()
+            local loader = loadstring or load
+            if typeof(loader) ~= "\102\117\110\099\116\105\111\110" then
+                Notify("\069\120\101\099\117\116\111\114\032\104\097\115\032\110\111\032\108\111\097\100\115\116\114\105\110\103\047\108\111\097\100")
+                return
+            end
+
+            local ok, fnOrErr = pcall(loader, code)
+            if not ok or typeof(fnOrErr) ~= "\102\117\110\099\116\105\111\110" then
+                Notify("\067\111\109\112\105\108\101\032\101\114\114\111\114\058\032" .. tostring(fnOrErr))
+                return
+            end
+
+            local runOk, runErr = pcall(fnOrErr)
+            if runOk then
+                Notify("\067\111\100\101\032\101\120\101\099\117\116\101\100")
+            else
+                Notify("\082\117\110\116\105\109\101\032\101\114\114\111\114\058\032" .. tostring(runErr))
+            end
+        end)
+
+        return frame
+    end
+
+    local function CreateUserMessage(text)
+        MessageOrder += 0x1
+
+        local outer = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, -0x2, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 0x1,
+            LayoutOrder = MessageOrder
+        }, Messages)
+
+        local bubble = New("\070\114\097\109\101", {
+            Position = UDim2.new(0x0, 0x2A, 0x0, 0x0),
+            Size = UDim2.new(0x1, -0x2E, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundColor3 = Config.Theme.User,
+            BorderSizePixel = 0x0
+        }, outer)
+        Corner(bubble, 0xD)
+
+        local label = New("\084\101\120\116\076\097\098\101\108", {
+            Position = UDim2.fromOffset(0xC, 0x8),
+            Size = UDim2.new(0x1, -0x18, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 0x1,
+            Text = Escape(text),
+            RichText = true,
+            TextWrapped = true,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextYAlignment = Enum.TextYAlignment.Top,
+            Font = Enum.Font.GothamMedium,
+            TextSize = 0xD,
+            TextColor3 = Config.Theme.Text
+        }, bubble)
+        Pad(label, 0x0, 0x9, 0x0, 0x0)
+
+        return outer
+    end
+
+    local function CreateAIMessage(text)
+        MessageOrder += 0x1
+
+        local outer = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, -0x2, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 0x1,
+            LayoutOrder = MessageOrder
+        }, Messages)
+
+        local bubble = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, -0x14, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundColor3 = Config.Theme.AI,
+            BorderSizePixel = 0x0
+        }, outer)
+        Corner(bubble, 0xC)
+        Stroke(bubble, Config.Theme.Border, 0x1)
+
+        local layout = New("\085\073\076\105\115\116\076\097\121\111\117\116", {
+            Padding = UDim.new(0x0, 0x6),
+            SortOrder = Enum.SortOrder.LayoutOrder
+        }, bubble)
+        Pad(bubble, 0x9, 0x26, 0x9, 0x9)
+
+        local source = tostring(text)
+        local pos = 0x1
+        local found = false
+
+        while true do
+            local s, e, language, code = source:find("\096\096\096\040\091\037\119\095\093\042\041\092\110\040\046\045\041\096\096\096", pos)
+
+            if not s then
+                local tail = source:sub(pos)
+                if tail ~= "" then
+                    New("\084\101\120\116\076\097\098\101\108", {
+                        Size = UDim2.new(0x1, 0x0, 0x0, 0x0),
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        BackgroundTransparency = 0x1,
+                        Text = FormatText(tail),
+                        RichText = true,
+                        TextWrapped = true,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        TextYAlignment = Enum.TextYAlignment.Top,
+                        Font = Enum.Font.GothamMedium,
+                        TextSize = 0xD,
+                        TextColor3 = Config.Theme.Text,
+                        LayoutOrder = found and 0x3E8 or 0x0
+                    }, bubble)
+                end
+                break
+            end
+
+            found = true
+
+            local before = source:sub(pos, s - 0x1)
+            if before ~= "" then
+                New("\084\101\120\116\076\097\098\101\108", {
+                    Size = UDim2.new(0x1, 0x0, 0x0, 0x0),
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    BackgroundTransparency = 0x1,
+                    Text = FormatText(before),
+                    RichText = true,
+                    TextWrapped = true,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    TextYAlignment = Enum.TextYAlignment.Top,
+                    Font = Enum.Font.GothamMedium,
+                    TextSize = 0xD,
+                    TextColor3 = Config.Theme.Text
+                }, bubble)
+            end
+
+            CreateCodeBox(bubble, code, language)
+            pos = e + 0x1
+        end
+
+        local copy = New("\084\101\120\116\066\117\116\116\111\110", {
+            AnchorPoint = Vector2.new(0x1, 0x1),
+            Position = UDim2.new(0x1, -0x7, 0x1, -0x7),
+            Size = UDim2.fromOffset(0x3A, 0x18),
+            BackgroundColor3 = Color3.fromRGB(0x1C, 0x1D, 0x23),
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = "\067\079\080\089",
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x7,
+            TextColor3 = Config.Theme.SubText
+        }, bubble)
+        Corner(copy, 0x6)
+
+        copy.MouseButton1Click:Connect(function()
+            local ok, err = CopyText(text)
+            Notify(ok and "\082\101\115\112\111\110\115\101\032\099\111\112\105\101\100" or tostring(err))
+        end)
+
+        return outer
+    end
+
+    --=========================================================
+    -- SEARCH DISPLAY
+    --=========================================================
+
+    local function ClearSearchLinks()
+        for _, child in ipairs(SearchLinks:GetChildren()) do
+            if child:IsA("\084\101\120\116\066\117\116\116\111\110") then
+                child:Destroy()
+            end
+        end
+    end
+
+    local function UpdateSearchDisplay(response)
+        ClearSearchLinks()
+
+        local links = {}
+        for url in tostring(response):gmatch("\104\116\116\112\115\063\058\047\047\091\037\119\037\112\093\043") do
+            url = url:gsub("\091\037\041\037\093\037\125\044\037\046\093\043\036", "")
+            if not table.find(links, url) then
+                table.insert(links, url)
+            end
+        end
+
+        if #links == 0x0 then
+            SearchText.Text = "\083\101\097\114\099\104\045\099\097\112\097\098\108\101\032\114\101\115\112\111\110\115\101\032\099\111\109\112\108\101\116\101\100\046\032\078\111\032\101\120\112\108\105\099\105\116\032\085\082\076\115\032\102\111\117\110\100\032\105\110\032\116\104\101\032\097\110\115\119\101\114\046"
+            return
+        end
+
+        SearchText.Text = "\068\101\116\101\099\116\101\100\032" .. tostring(#links) .. "\032\115\111\117\114\099\101\032\108\105\110\107\040\115\041\046\032\084\097\112\032\097\032\115\111\117\114\099\101\032\116\111\032\099\111\112\121\032\105\116\046"
+
+        for i, url in ipairs(links) do
+            local b = New("\084\101\120\116\066\117\116\116\111\110", {
+                Size = UDim2.new(0x1, -0x3, 0x0, 0x16),
+                BackgroundColor3 = Color3.fromRGB(0x1B, 0x1C, 0x23),
+                BorderSizePixel = 0x0,
+                AutoButtonColor = false,
+                Text = "\083\079\085\082\067\069\032" .. i .. "\058\032" .. url,
+                Font = Enum.Font.Code,
+                TextSize = 0x8,
+                TextColor3 = Config.Theme.Accent,
+                TextXAlignment = Enum.TextXAlignment.Left
+            }, SearchLinks)
+            Corner(b, 0x6)
+            b.MouseButton1Click:Connect(function()
+                local ok, err = CopyText(url)
+                Notify(ok and "\083\111\117\114\099\101\032\099\111\112\105\101\100" or tostring(err))
+            end)
+        end
+    end
+
+    --=========================================================
+    -- AUTO EXECUTE
+    --=========================================================
+
+    local function ExecuteLuaCode(code, label)
+        local loader = loadstring or load
+
+        if typeof(loader) ~= "\102\117\110\099\116\105\111\110" then
+            Notify("\069\120\101\099\117\116\111\114\032\100\111\101\115\032\110\111\116\032\101\120\112\111\115\101\032\108\111\097\100\115\116\114\105\110\103\047\108\111\097\100")
+            return false
+        end
+
+        local chunk, compileError = pcall(loader, code)
+
+        if not chunk or typeof(compileError) ~= "\102\117\110\099\116\105\111\110" then
+            Notify("\067\111\109\112\105\108\101\032\101\114\114\111\114\058\032" .. tostring(compileError))
+            return false
+        end
+
+        local ok, runtimeError = pcall(compileError)
+
+        if not ok then
+            Notify("\082\117\110\116\105\109\101\032\101\114\114\111\114\058\032" .. tostring(runtimeError))
+            return false
+        end
+
+        Notify("\069\120\101\099\117\116\101\100\058\032" .. tostring(label or "\065\073\032\099\111\100\101"))
+        return true
+    end
+
+    local function AutoExecuteMarked(response)
+        if not State.AutoExecuteCode then
+            return
+        end
+
+        local code = response:match("\096\096\096\091\037\119\095\093\042\092\110\037\115\042\037\045\037\045\032\080\079\076\073\095\065\085\084\079\095\069\088\069\067\092\110\040\046\045\041\096\096\096")
+
+        if not code then
+            return
+        end
+
+        ExecuteLuaCode(code, "\065\073\032\109\097\114\107\101\100\032\097\099\116\105\111\110")
+    end
+
+    --=========================================================
+    -- HTTP
+    --=========================================================
+
+    local function HTTP(body, method, url)
+        if not Request then
+            return nil, "\069\120\101\099\117\116\111\114\032\072\084\084\080\032\102\117\110\099\116\105\111\110\032\110\111\116\032\102\111\117\110\100"
+        end
+
+        local requestData = {
+            Url = url or Config.Endpoint,
+            Method = method or "\080\079\083\084",
+            Headers = {
+                ["\065\099\099\101\112\116"] = "\097\112\112\108\105\099\097\116\105\111\110\047\106\115\111\110",
+                ["\067\111\110\116\101\110\116\045\084\121\112\101"] = "\097\112\112\108\105\099\097\116\105\111\110\047\106\115\111\110",
+                ["\065\117\116\104\111\114\105\122\097\116\105\111\110"] = "\066\101\097\114\101\114\032" .. Config.APIKey
+            }
+        }
+
+        if body ~= nil then
+            requestData.Body = HttpService:JSONEncode(body)
+        end
+
+        local ok, response = pcall(function()
+            return Request(requestData)
+        end)
+
+        if not ok then
+            return nil, tostring(response)
+        end
+
+        if not response then
+            return nil, "\078\111\032\072\084\084\080\032\114\101\115\112\111\110\115\101"
+        end
+
+        local status = tonumber(response.StatusCode)
+
+        if status and (status < 0xC8 or status >= 0x12C) then
+            local raw = tostring(response.Body or "")
+            local message = raw
+
+            pcall(function()
+                local parsed = HttpService:JSONDecode(raw)
+                if parsed and parsed.error then
+                    if type(parsed.error) == "\116\097\098\108\101" then
+                        message = parsed.error.message or parsed.error.code or raw
+                    else
+                        message = tostring(parsed.error)
+                    end
+                end
+            end)
+
+            return nil, "\072\084\084\080\032" .. tostring(status) .. "\058\032" .. tostring(message)
+        end
+
+        return tostring(response.Body or "")
+    end
+
+    local function ParseAI(raw)
+        local ok, data = pcall(function()
+            return HttpService:JSONDecode(raw)
+        end)
+
+        if not ok or type(data) ~= "\116\097\098\108\101" then
+            return nil, "\065\080\073\032\114\101\116\117\114\110\101\100\032\105\110\118\097\108\105\100\032\074\083\079\078"
+        end
+
+        if data.error then
+            if type(data.error) == "\116\097\098\108\101" then
+                return nil, tostring(data.error.message or data.error.code or "\065\080\073\032\101\114\114\111\114")
+            end
+            return nil, tostring(data.error)
+        end
+
+        if data.choices and data.choices[0x1] and data.choices[0x1].message then
+            local content = data.choices[0x1].message.content
+            if content then
+                return tostring(content)
+            end
+        end
+
+        if data.output_text then
+            return tostring(data.output_text)
+        end
+
+        if data.response then
+            return tostring(data.response)
+        end
+
+        return nil, "\065\073\032\114\101\115\112\111\110\115\101\032\100\105\100\032\110\111\116\032\099\111\110\116\097\105\110\032\109\101\115\115\097\103\101\032\099\111\110\116\101\110\116"
+    end
+
+    local function AskAI()
+        if Config.APIKey == "" then
+            return nil, "\078\111\032\065\080\073\032\107\101\121\032\099\111\110\102\105\103\117\114\101\100"
+        end
+
+        local payload = {
+            model = Config.Model,
+            messages = History,
+            temperature = Config.Temperature,
+            max_tokens = Config.MaxTokens,
+            stream = false
+        }
+
+        local lastError = "\085\110\107\110\111\119\110\032\101\114\114\111\114"
+
+        for attempt = 0x1, Config.Retries + 0x1 do
+            SetActivity(
+                (Config.Mode == "\083\101\097\114\099\104\105\110\103")
+                and ("\083\101\097\114\099\104\105\110\103\032\114\101\113\117\101\115\116\044\032\097\116\116\101\109\112\116\032" .. attempt .. "\046\046\046")
+                or ("\084\104\105\110\107\105\110\103\032\114\101\113\117\101\115\116\044\032\097\116\116\101\109\112\116\032" .. attempt .. "\046\046\046")
+            )
+
+            local raw, err = HTTP(payload)
+
+            if raw then
+                local response, parseErr = ParseAI(raw)
+                if response then
+                    return response
+                end
+                lastError = parseErr or lastError
+            else
+                lastError = err or lastError
+            end
+
+            if attempt <= Config.Retries then
+                task.wait(Config.RetryDelay * attempt)
+            end
+        end
+
+        return nil, lastError
+    end
+
+    --=========================================================
+    -- SEND
+    --=========================================================
+
+    local function TrimHistory()
+        while #History > Config.MaxHistory + 0x1 do
+            table.remove(History, 0x2)
+        end
+    end
+
+    local function SendMessage(prompt)
+        if State.Generating then
+            Notify("\080\111\108\105\032\065\073\032\105\115\032\097\108\114\101\097\100\121\032\103\101\110\101\114\097\116\105\110\103")
+            return
+        end
+
+        prompt = Trim(prompt)
+
+        if prompt == "" then
+            return
+        end
+
+        if #prompt > Config.MaxPromptLength then
+            Notify("\077\101\115\115\097\103\101\032\105\115\032\116\111\111\032\108\111\110\103")
+            return
+        end
+
+        if Config.APIKey == "" then
+            Notify("\083\101\116\032\121\111\117\114\032\065\080\073\032\107\101\121\032\105\110\032\065\100\118\097\110\099\101")
+            return
+        end
+
+        EmptyChat.Visible = false
+        InputBox.Text = ""
+        InputCount.Text = "\048\047" .. Config.MaxPromptLength
+
+        State.LastPrompt = prompt
+        State.LastResponse = nil
+
+        CreateUserMessage(prompt)
+
+        table.insert(History, {
+            role = "\117\115\101\114",
+            content = prompt
+        })
+        TrimHistory()
+
+        State.GenerationID += 0x1
+        local generation = State.GenerationID
+        State.Generating = true
+
+        SendButton.Text = "\083\084\079\080"
+        SendButton.BackgroundColor3 = Config.Theme.Red
+        HeaderStatus.Text = "\071\069\078\069\082\065\084\073\078\071"
+        HeaderStatus.TextColor3 = Config.Theme.Yellow
+
+        ModeLabel.Text = "\077\079\068\069\058\032" .. string.upper(Config.Mode)
+
+        if Config.Mode == "\083\101\097\114\099\104\105\110\103" then
+            SearchText.Text = "\083\101\097\114\099\104\045\099\097\112\097\098\108\101\032\114\101\113\117\101\115\116\032\115\116\097\114\116\101\100\046"
+            SearchPanel.Visible = State.SearchVisible
+        end
+
+        local thinkingFrame = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, -0x2, 0x0, 0x0),
+            AutomaticSize = Enum.AutomaticSize.Y,
+            BackgroundTransparency = 0x1,
+            LayoutOrder = MessageOrder + 0x1
+        }, Messages)
+        MessageOrder += 0x1
+
+        local thinkingBubble = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, -0x14, 0x0, 0x2A),
+            BackgroundColor3 = Config.Theme.AI,
+            BorderSizePixel = 0x0
+        }, thinkingFrame)
+        Corner(thinkingBubble, 0xC)
+        Stroke(thinkingBubble, Config.Theme.Border, 0x1)
+
+        local thinkingLabel = New("\084\101\120\116\076\097\098\101\108", {
+            Position = UDim2.fromOffset(0xC, 0xA),
+            Size = UDim2.new(0x1, -0x18, 0x0, 0x14),
+            BackgroundTransparency = 0x1,
+            Text = "\084\104\105\110\107\105\110\103\046\046\046",
+            Font = Enum.Font.GothamMedium,
+            TextSize = 0xB,
+            TextColor3 = Config.Theme.SubText,
+            TextXAlignment = Enum.TextXAlignment.Left
+        }, thinkingBubble)
+
+        local alive = true
+        task.spawn(function()
+            local dots = 0x0
+            while alive and State.Generating and thinkingLabel.Parent do
+                dots = (dots + 0x1) % 0x4
+                thinkingLabel.Text = Config.Mode .. string.rep("\046", dots)
+                task.wait(0.32)
+            end
+        end)
+
+        ScrollBottom()
+
+        task.spawn(function()
+            local response, err = AskAI()
+
+            alive = false
+
+            if generation ~= State.GenerationID then
+                if thinkingFrame.Parent then
+                    thinkingFrame:Destroy()
+                end
+                return
+            end
+
+            State.Generating = false
+            SendButton.Text = "\083\069\078\068"
+            SendButton.BackgroundColor3 = Config.Theme.Accent
+
+            if thinkingFrame.Parent then
+                thinkingFrame:Destroy()
+            end
+
+            if not response then
+                CreateAIMessage("\069\082\082\079\082\092\110\092\110" .. tostring(err or "\085\110\107\110\111\119\110\032\101\114\114\111\114"))
+                HeaderStatus.Text = "\069\082\082\079\082"
+                HeaderStatus.TextColor3 = Config.Theme.Red
+                SetActivity(tostring(err or "\085\110\107\110\111\119\110\032\101\114\114\111\114"))
+                ScrollBottom()
+                return
+            end
+
+            State.LastResponse = response
+
+            table.insert(History, {
+                role = "\097\115\115\105\115\116\097\110\116",
+                content = response
+            })
+            TrimHistory()
+
+            CreateAIMessage(response)
+
+            if Config.Mode == "\083\101\097\114\099\104\105\110\103" then
+                UpdateSearchDisplay(response)
+            end
+
+            AutoExecuteMarked(response)
+
+            HeaderStatus.Text = "\082\069\065\068\089"
+            HeaderStatus.TextColor3 = Config.Theme.Green
+            SetActivity(
+                Config.Mode == "\083\101\097\114\099\104\105\110\103"
+                and "\083\101\097\114\099\104\045\099\097\112\097\098\108\101\032\114\101\115\112\111\110\115\101\032\099\111\109\112\108\101\116\101\100\046"
+                or "\080\114\111\102\101\115\115\105\111\110\097\108\032\114\101\115\112\111\110\115\101\032\099\111\109\112\108\101\116\101\100\046"
+            )
+
+            ScrollBottom()
+        end)
+    end
+
+    InputBox:GetPropertyChangedSignal("\084\101\120\116"):Connect(function()
+        if #InputBox.Text > Config.MaxPromptLength then
+            InputBox.Text = InputBox.Text:sub(0x1, Config.MaxPromptLength)
+        end
+        InputCount.Text = tostring(#InputBox.Text) .. "\047" .. Config.MaxPromptLength
+    end)
+
+    SendButton.MouseButton1Click:Connect(function()
+        if State.Generating then
+            State.GenerationID += 0x1
+            State.Generating = false
+            SendButton.Text = "\083\069\078\068"
+            SendButton.BackgroundColor3 = Config.Theme.Accent
+            HeaderStatus.Text = "\083\084\079\080\080\069\068"
+            HeaderStatus.TextColor3 = Config.Theme.Red
+            Notify("\071\101\110\101\114\097\116\105\111\110\032\115\116\111\112\112\101\100")
+            return
+        end
+
+        SendMessage(InputBox.Text)
+    end)
+
+    InputBox.FocusLost:Connect(function(enterPressed)
+        if not enterPressed then
+            return
+        end
+
+        local shiftHeld = UIS:IsKeyDown(Enum.KeyCode.LeftShift)
+            or UIS:IsKeyDown(Enum.KeyCode.RightShift)
+
+        if shiftHeld then
+            task.defer(function()
+                InputBox:CaptureFocus()
+            end)
+            return
+        end
+
+        SendMessage(InputBox.Text)
+    end)
+
+    --=========================================================
+    -- CLEAR / NEW CHAT
+    --=========================================================
+
+    local function ClearChat()
+        for _, child in ipairs(Messages:GetChildren()) do
+            if child:IsA("\070\114\097\109\101") and child ~= EmptyChat then
+                child:Destroy()
+            end
+        end
+
+        History = {
+            {
+                role = "\115\121\115\116\101\109",
+                content = Config.SystemPrompt
+            }
+        }
+
+        State.LastPrompt = nil
+        State.LastResponse = nil
+        MessageOrder = 0x0
+        EmptyChat.Visible = true
+        Notify("\078\101\119\032\099\104\097\116\032\115\116\097\114\116\101\100")
+    end
+
+    NewChatButton.MouseButton1Click:Connect(function()
+        State.GenerationID += 0x1
+        State.Generating = false
+        ClearChat()
+        HeaderStatus.Text = "\082\069\065\068\089"
+        HeaderStatus.TextColor3 = Config.Theme.Green
+    end)
+
+    --=========================================================
+    -- VIEW PANELS
+    --=========================================================
+
+    ViewThinking.MouseButton1Click:Connect(function()
+        State.ActivityVisible = not State.ActivityVisible
+        ActivityPanel.Visible = State.ActivityVisible
+        SearchPanel.Visible = false
+    end)
+
+    ViewSearching.MouseButton1Click:Connect(function()
+        State.SearchVisible = not State.SearchVisible
+        SearchPanel.Visible = State.SearchVisible
+        ActivityPanel.Visible = false
+    end)
+
+    --=========================================================
+    -- ADVANCE PAGE
+    --=========================================================
+
+    local function Title(parent, text, order)
+        return New("\084\101\120\116\076\097\098\101\108", {
+            Size = UDim2.new(0x1, 0x0, 0x0, 0x16),
+            BackgroundTransparency = 0x1,
+            Text = text,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0xA,
+            TextColor3 = Config.Theme.Accent,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            LayoutOrder = order or 0x0
+        }, parent)
+    end
+
+    local function Field(parent, label, default, height, order)
+        local holder = New("\070\114\097\109\101", {
+            Size = UDim2.new(0x1, 0x0, 0x0, height),
+            BackgroundColor3 = Config.Theme.Panel,
+            BorderSizePixel = 0x0,
+            LayoutOrder = order or 0x0
+        }, parent)
+        Corner(holder, 0xA)
+        Stroke(holder, Config.Theme.Border, 0x1)
+
+        New("\084\101\120\116\076\097\098\101\108", {
+            Position = UDim2.fromOffset(0x9, 0x6),
+            Size = UDim2.new(0x1, -0x12, 0x0, 0x10),
+            BackgroundTransparency = 0x1,
+            Text = label,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x8,
+            TextColor3 = Config.Theme.SubText,
+            TextXAlignment = Enum.TextXAlignment.Left
+        }, holder)
+
+        local box = New("\084\101\120\116\066\111\120", {
+            Position = UDim2.fromOffset(0x9, 0x1A),
+            Size = UDim2.new(0x1, -0x12, 0x1, -0x22),
+            BackgroundColor3 = Config.Theme.Input,
+            BorderSizePixel = 0x0,
+            Text = default or "",
+            Font = Enum.Font.GothamMedium,
+            TextSize = 0xB,
+            TextColor3 = Config.Theme.Text,
+            TextWrapped = true,
+            MultiLine = true,
+            ClearTextOnFocus = false,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextYAlignment = Enum.TextYAlignment.Top
+        }, holder)
+        Corner(box, 0x8)
+        return holder, box
+    end
+
+    Title(AdvancePage, "\065\073\032\073\068\069\078\084\073\084\089", 0x1)
+    local PersonaHolder, PersonaBox = Field(AdvancePage, "\080\069\082\083\079\078\065", Config.Persona, 0x46, 0x2)
+    local PromptHolder, PromptBox = Field(AdvancePage, "\083\089\083\084\069\077\032\080\082\079\077\080\084", Config.SystemPrompt, 0x9B, 0x3)
+    Title(AdvancePage, "\065\080\073", 0x4)
+    local ApiAdvHolder, ApiAdvBox = Field(AdvancePage, "\065\080\073\032\075\069\089", "", 0x46, 0x5)
+    local ApiAdvButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x24),
+        BackgroundColor3 = Color3.fromRGB(0x1E, 0x1F, 0x26),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\083\072\079\087\032\065\080\073\032\075\069\089",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Config.Theme.Text,
+        LayoutOrder = 0x6
+    }, AdvancePage)
+    Corner(ApiAdvButton, 0x8)
+
+    local TestApiButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x24),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\084\069\083\084\032\065\080\073\032\067\079\078\078\069\067\084\073\079\078",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1),
+        LayoutOrder = 0x7
+    }, AdvancePage)
+    Corner(TestApiButton, 0x8)
+
+    Title(AdvancePage, "\077\079\068\069\076\083", 0x8)
+    local ModelHolder, ModelBox = Field(AdvancePage, "\065\067\084\073\086\069\032\077\079\068\069\076", Config.Model, 0x46, 0x9)
+    local ThinkingModelHolder, ThinkingModelBox = Field(AdvancePage, "\084\072\073\078\075\073\078\071\032\077\079\068\069\076", Config.ThinkingModel, 0x46, 0xA)
+    local SearchingModelHolder, SearchingModelBox = Field(AdvancePage, "\083\069\065\082\067\072\073\078\071\032\077\079\068\069\076", Config.SearchingModel, 0x46, 0xB)
+
+    local ModelsLabel = New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x78),
+        BackgroundColor3 = Config.Theme.Code,
+        BorderSizePixel = 0x0,
+        Text = "\077\079\068\069\076\032\067\065\084\065\076\079\071\092\110\092\110\078\111\116\032\108\111\097\100\101\100\032\121\101\116\046",
+        Font = Enum.Font.Code,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.SubText,
+        TextWrapped = true,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0xC
+    }, AdvancePage)
+    Corner(ModelsLabel, 0x9)
+    Pad(ModelsLabel, 0x9, 0x9, 0x9, 0x9)
+
+    local RefreshModels = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x24),
+        BackgroundColor3 = Color3.fromRGB(0x1E, 0x1F, 0x26),
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\082\069\070\082\069\083\072\032\077\079\068\069\076\032\076\073\083\084",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Config.Theme.Text,
+        LayoutOrder = 0xD
+    }, AdvancePage)
+    Corner(RefreshModels, 0x8)
+
+    local SaveAdvance = New("\084\101\120\116\066\117\116\116\111\110", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x26),
+        BackgroundColor3 = Config.Theme.Green,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\083\065\086\069\032\065\073\032\083\069\084\084\073\078\071\083",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x8,
+        TextColor3 = Color3.fromRGB(0x7, 0x14, 0xC),
+        LayoutOrder = 0xE
+    }, AdvancePage)
+    Corner(SaveAdvance, 0x8)
+
+    local ApiAdvVisible = false
+    local function SyncAdvKey()
+        if ApiAdvVisible then
+            ApiAdvBox.Text = Config.APIKey
+            ApiAdvBox.TextEditable = true
+            ApiAdvButton.Text = "\072\073\068\069\032\065\080\073\032\075\069\089"
+        else
+            ApiAdvBox.Text = #Config.APIKey == 0x0 and "" or string.rep("\042", math.min(#Config.APIKey, 0x30))
+            ApiAdvBox.TextEditable = false
+            ApiAdvButton.Text = "\083\072\079\087\032\065\080\073\032\075\069\089"
+        end
+    end
+
+    ApiAdvButton.MouseButton1Click:Connect(function()
+        ApiAdvVisible = not ApiAdvVisible
+        SyncAdvKey()
+    end)
+
+    TestApiButton.MouseButton1Click:Connect(function()
+        Config.APIKey = ApiAdvVisible and Trim(ApiAdvBox.Text) or Config.APIKey
+
+        if Config.APIKey == "" then
+            Notify("\078\111\032\065\080\073\032\107\101\121\032\099\111\110\102\105\103\117\114\101\100")
+            return
+        end
+
+        Notify("\084\101\115\116\105\110\103\032\065\080\073\046\046\046")
+
+        task.spawn(function()
+            local raw, err = HTTP({
+                model = Config.Model,
+                messages = {
+                    {role = "\117\115\101\114", content = "\082\101\112\108\121\032\119\105\116\104\032\101\120\097\099\116\108\121\058\032\080\111\108\105\032\065\073\032\099\111\110\110\101\099\116\105\111\110\032\079\075"}
+                },
+                stream = false,
+                max_tokens = 0x14
+            })
+
+            if not raw then
+                Notify("\065\080\073\032\116\101\115\116\032\102\097\105\108\101\100")
+                SetActivity(tostring(err))
+                return
+            end
+
+            local answer, parseErr = ParseAI(raw)
+            if answer then
+                Notify("\065\080\073\032\099\111\110\110\101\099\116\105\111\110\032\079\075")
+                SetActivity("\065\080\073\032\116\101\115\116\032\112\097\115\115\101\100\058\032" .. answer)
+            else
+                Notify("\065\080\073\032\114\101\116\117\114\110\101\100\032\097\110\032\105\110\118\097\108\105\100\032\114\101\115\112\111\110\115\101")
+                SetActivity(tostring(parseErr))
+            end
+        end)
+    end)
+
+    RefreshModels.MouseButton1Click:Connect(function()
+        task.spawn(function()
+            local raw, err = HTTP(nil, "\071\069\084", Config.ModelsEndpoint)
+
+            if not raw then
+                ModelsLabel.Text = "\077\079\068\069\076\032\067\065\084\065\076\079\071\092\110\092\110" .. tostring(err)
+                Notify("\077\111\100\101\108\032\108\105\115\116\032\102\097\105\108\101\100")
+                return
+            end
+
+            local ok, data = pcall(function()
+                return HttpService:JSONDecode(raw)
+            end)
+
+            if not ok or type(data) ~= "\116\097\098\108\101" then
+                ModelsLabel.Text = "\077\079\068\069\076\032\067\065\084\065\076\079\071\092\110\092\110\073\110\118\097\108\105\100\032\109\111\100\101\108\032\114\101\115\112\111\110\115\101"
+                return
+            end
+
+            local entries = data.data or data.models or data
+            local models = {}
+
+            if type(entries) == "\116\097\098\108\101" then
+                for _, item in ipairs(entries) do
+                    if type(item) == "\116\097\098\108\101" then
+                        local id = item.id or item.name
+                        if id then
+                            table.insert(models, tostring(id))
+                        end
+                    elseif type(item) == "\115\116\114\105\110\103" then
+                        table.insert(models, item)
+                    end
+                end
+            end
+
+            table.sort(models)
+            State.Models = models
+
+            local shown = {}
+            for i = 0x1, math.min(#models, 0x1E) do
+                table.insert(shown, models[i])
+            end
+
+            ModelsLabel.Text = "\077\079\068\069\076\032\067\065\084\065\076\079\071\092\110\092\110"
+                .. ((#shown > 0x0) and table.concat(shown, "\092\110") or "\078\111\032\109\111\100\101\108\115\032\114\101\116\117\114\110\101\100")
+
+            if #models > #shown then
+                ModelsLabel.Text = ModelsLabel.Text .. "\092\110\092\110\046\046\046\032\043" .. (#models - #shown) .. "\032\109\111\114\101"
+            end
+
+            Notify("\076\111\097\100\101\100\032" .. #models .. "\032\109\111\100\101\108\115")
+        end)
+    end)
+
+    SaveAdvance.MouseButton1Click:Connect(function()
+        local persona = Trim(PersonaBox.Text)
+        local prompt = PromptBox.Text
+        local model = Trim(ModelBox.Text)
+        local thinkingModel = Trim(ThinkingModelBox.Text)
+        local searchingModel = Trim(SearchingModelBox.Text)
+
+        if persona ~= "" then
+            Config.Persona = persona
+        end
+
+        if prompt ~= "" then
+            Config.SystemPrompt = prompt
+        end
+
+        if model ~= "" then
+            Config.Model = model
+        end
+
+        if thinkingModel ~= "" then
+            Config.ThinkingModel = thinkingModel
+        end
+
+        if searchingModel ~= "" then
+            Config.SearchingModel = searchingModel
+        end
+
+        if ApiAdvVisible then
+            Config.APIKey = Trim(ApiAdvBox.Text)
+        end
+
+        History[0x1] = {
+            role = "\115\121\115\116\101\109",
+            content = Config.SystemPrompt
+        }
+
+        Notify("\065\073\032\115\101\116\116\105\110\103\115\032\115\097\118\101\100")
+    end)
+
+    SyncAdvKey()
+
+    --=========================================================
+    -- SETTINGS PAGE
+    --=========================================================
+
+    Title(SettingsPage, "\073\078\084\069\082\070\065\067\069", 0x1)
+
+    local function SettingButton(text, order)
+        local b = New("\084\101\120\116\066\117\116\116\111\110", {
+            Size = UDim2.new(0x1, 0x0, 0x0, 0x28),
+            BackgroundColor3 = Config.Theme.Panel,
+            BorderSizePixel = 0x0,
+            AutoButtonColor = false,
+            Text = text,
+            Font = Enum.Font.GothamBold,
+            TextSize = 0x8,
+            TextColor3 = Config.Theme.Text,
+            LayoutOrder = order
+        }, SettingsPage)
+        Corner(b, 0x9)
+        Stroke(b, Config.Theme.Border, 0x1)
+        return b
+    end
+
+    local ScaleDown = SettingButton("\085\073\032\083\067\065\076\069\058\032\049\048\048\037\032\045", 0x2)
+    local ScaleUp = SettingButton("\085\073\032\083\067\065\076\069\058\032\049\048\048\037\032\043", 0x3)
+    local OpacityDown = SettingButton("\079\080\065\067\073\084\089\058\032\049\048\048\037\032\045", 0x4)
+    local OpacityUp = SettingButton("\079\080\065\067\073\084\089\058\032\049\048\048\037\032\043", 0x5)
+
+    local ActivityToggle = SettingButton("\080\082\079\067\069\083\083\032\083\084\065\084\085\083\058\032\079\078", 0x6)
+    ActivityToggle.MouseButton1Click:Connect(function()
+        State.ActivityVisible = not State.ActivityVisible
+        ActivityPanel.Visible = State.ActivityVisible
+        ActivityToggle.Text = State.ActivityVisible and "\080\082\079\067\069\083\083\032\083\084\065\084\085\083\058\032\079\078" or "\080\082\079\067\069\083\083\032\083\084\065\084\085\083\058\032\079\070\070"
+    end)
+
+    local ResetUI = SettingButton("\082\069\083\069\084\032\085\073", 0x7)
+
+    local function ApplyScale()
+        ScaleDown.Text = "\085\073\032\083\067\065\076\069\058\032" .. math.floor(State.Scale * 0x64) .. "\037\032\045"
+        ScaleUp.Text = "\085\073\032\083\067\065\076\069\058\032" .. math.floor(State.Scale * 0x64) .. "\037\032\043"
+
+        local camera = workspace.CurrentCamera
+        if camera then
+            local viewport = camera.ViewportSize
+            local baseWidth = math.min(viewport.X - 0x12, viewport.X < 0x230 and viewport.X - 0x12 or 0x26C)
+            local width = math.max(0x140, math.floor(baseWidth * State.Scale))
+            local ratio = 1.24
+            local height = math.floor(width / ratio)
+            height = math.min(height, math.max(0x190, viewport.Y - 0x12))
+            MainAspect.AspectRatio = width / math.max(height, 0x1)
+            MainWindow.Size = UDim2.fromOffset(width, height)
+        end
+    end
+
+    local function ApplyOpacity()
+        MainWindow.BackgroundTransparency = 0x1 - State.Opacity
+    end
+
+    ScaleDown.MouseButton1Click:Connect(function()
+        State.Scale = math.clamp(State.Scale - 0.05, 0.80, 1.15)
+        ApplyScale()
+    end)
+
+    ScaleUp.MouseButton1Click:Connect(function()
+        State.Scale = math.clamp(State.Scale + 0.05, 0.80, 1.15)
+        ApplyScale()
+    end)
+
+    OpacityDown.MouseButton1Click:Connect(function()
+        State.Opacity = math.clamp(State.Opacity - 0.05, 0.70, 0x1)
+        OpacityDown.Text = "\079\080\065\067\073\084\089\058\032" .. math.floor(State.Opacity * 0x64) .. "\037\032\045"
+        OpacityUp.Text = "\079\080\065\067\073\084\089\058\032" .. math.floor(State.Opacity * 0x64) .. "\037\032\043"
+        ApplyOpacity()
+    end)
+
+    OpacityUp.MouseButton1Click:Connect(function()
+        State.Opacity = math.clamp(State.Opacity + 0.05, 0.70, 0x1)
+        OpacityDown.Text = "\079\080\065\067\073\084\089\058\032" .. math.floor(State.Opacity * 0x64) .. "\037\032\045"
+        OpacityUp.Text = "\079\080\065\067\073\084\089\058\032" .. math.floor(State.Opacity * 0x64) .. "\037\032\043"
+        ApplyOpacity()
+    end)
+
+    ResetUI.MouseButton1Click:Connect(function()
+        State.Scale = 0x1
+        State.Opacity = 0x1
+        ApplyScale()
+        ApplyOpacity()
+        Notify("\085\073\032\114\101\115\101\116")
+    end)
+
+    --=========================================================
+    -- TECH PAGE
+    --=========================================================
+
+    Title(TechPage, "\084\069\067\072\032\067\079\078\084\082\079\076", 0x1)
+
+    local TechInfo = New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x4B),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        Text = "\084\101\099\104\032\099\111\110\116\114\111\108\115\032\097\114\101\032\111\112\116\105\111\110\097\108\046\032\077\111\118\101\109\101\110\116\032\097\110\100\032\099\104\097\116\032\114\101\109\097\105\110\032\100\105\115\097\098\108\101\100\032\117\110\108\101\115\115\032\101\120\112\108\105\099\105\116\108\121\032\101\110\097\098\108\101\100\032\098\101\108\111\119\046\032\065\117\116\111\045\114\117\110\032\111\110\108\121\032\101\120\101\099\117\116\101\115\032\065\073\032\098\108\111\099\107\115\032\109\097\114\107\101\100\032\119\105\116\104\032\045\045\032\080\079\076\073\095\065\085\084\079\095\069\088\069\067\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.SubText,
+        TextWrapped = true,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x2
+    }, TechPage)
+    Corner(TechInfo, 0xA)
+    Stroke(TechInfo, Config.Theme.Border, 0x1)
+    Pad(TechInfo, 0x9, 0x9, 0x9, 0x9)
+
+    local function TechToggle(label, getter, setter, order)
+        local b = SettingButton(label .. "\058\032\079\070\070", order)
+        b.Parent = TechPage
+        b.LayoutOrder = order
+
+        b.MouseButton1Click:Connect(function()
+            setter(not getter())
+            b.Text = label .. (getter() and "\058\032\079\078" or "\058\032\079\070\070")
+            b.TextColor3 = getter() and Config.Theme.Green or Config.Theme.Text
+        end)
+
+        return b
+    end
+
+    TechToggle("\077\079\086\069\077\069\078\084", function() return State.TechMovement end, function(v) State.TechMovement = v end, 0x3)
+    TechToggle("\067\072\065\084", function() return State.TechChat end, function(v) State.TechChat = v end, 0x4)
+    TechToggle("\065\085\084\079\032\065\067\084\073\079\078\083", function() return State.TechAuto end, function(v) State.TechAuto = v end, 0x5)
+    TechToggle("\065\085\084\079\032\082\085\078\032\065\073\032\067\079\068\069", function() return State.AutoExecuteCode end, function(v) State.AutoExecuteCode = v end, 0x6)
+
+    local TechCommands = New("\084\101\120\116\076\097\098\101\108", {
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x91),
+        BackgroundColor3 = Config.Theme.Code,
+        BorderSizePixel = 0x0,
+        Text = "\084\069\067\072\032\067\079\077\077\065\078\068\083\092\110\092\110\064\109\111\118\101\032\102\111\114\119\097\114\100\032\049\092\110\064\109\111\118\101\032\098\097\099\107\119\097\114\100\032\049\092\110\064\109\111\118\101\032\108\101\102\116\032\049\092\110\064\109\111\118\101\032\114\105\103\104\116\032\049\092\110\064\106\117\109\112\092\110\064\115\116\111\112\092\110\064\099\104\097\116\032\104\101\108\108\111\032\119\111\114\108\100",
+        Font = Enum.Font.Code,
+        TextSize = 0x9,
+        TextColor3 = Config.Theme.SubText,
+        TextWrapped = true,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Top,
+        LayoutOrder = 0x7
+    }, TechPage)
+    Corner(TechCommands, 0x9)
+    Pad(TechCommands, 0x9, 0x9, 0x9, 0x9)
+
+    --=========================================================
+    -- TECH ACTIONS
+    --=========================================================
+
+    local function GetHumanoid()
+        local character = LocalPlayer.Character
+        if not character then
+            return nil
+        end
+        return character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100")
+    end
+
+    local function MoveCharacter(direction, seconds)
+        if not State.TechMovement then
+            return
+        end
+
+        local humanoid = GetHumanoid()
+        local camera = workspace.CurrentCamera
+        if not humanoid or not camera then
+            return
+        end
+
+        local vector
+        if direction == "\102\111\114\119\097\114\100" then
+            vector = camera.CFrame.LookVector
+        elseif direction == "\098\097\099\107\119\097\114\100" then
+            vector = -camera.CFrame.LookVector
+        elseif direction == "\108\101\102\116" then
+            vector = -camera.CFrame.RightVector
+        elseif direction == "\114\105\103\104\116" then
+            vector = camera.CFrame.RightVector
+        else
+            return
+        end
+
+        vector = Vector3.new(vector.X, 0x0, vector.Z)
+        if vector.Magnitude <= 0x0 then
+            return
+        end
+
+        seconds = math.clamp(tonumber(seconds) or 0x1, 0.1, 0x4)
+        humanoid:Move(vector.Unit, false)
+
+        task.delay(seconds, function()
+            if humanoid and humanoid.Parent then
+                humanoid:Move(Vector3.zero, false)
+            end
+        end)
+    end
+
+    local function JumpCharacter()
+        if not State.TechMovement then
+            return
+        end
+
+        local humanoid = GetHumanoid()
+        if humanoid then
+            humanoid.Jump = true
+        end
+    end
+
+    local function StopCharacter()
+        if not State.TechMovement then
+            return
+        end
+
+        local humanoid = GetHumanoid()
+        if humanoid then
+            humanoid:Move(Vector3.zero, false)
+        end
+    end
+
+    local function ChatCharacter(text)
+        if not State.TechChat then
+            return
+        end
+
+        text = Trim(text)
+        if text == "" then
+            return
+        end
+
+        pcall(function()
+            local TextChatService = game:GetService("\084\101\120\116\067\104\097\116\083\101\114\118\105\099\101")
+            local channels = TextChatService:FindFirstChild("\084\101\120\116\067\104\097\110\110\101\108\115")
+            local general = channels and channels:FindFirstChild("\082\066\088\071\101\110\101\114\097\108")
+            if general then
+                general:SendAsync(text)
+            end
+        end)
+
+        pcall(function()
+            local events = game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101"):FindFirstChild("\068\101\102\097\117\108\116\067\104\097\116\083\121\115\116\101\109\067\104\097\116\069\118\101\110\116\115")
+            local say = events and events:FindFirstChild("\083\097\121\077\101\115\115\097\103\101\082\101\113\117\101\115\116")
+            if say then
+                say:FireServer(text, "\065\108\108")
+            end
+        end)
+    end
+
+    local function ExecuteTechCommands(response)
+        if not State.TechAuto then
+            return
+        end
+
+        for line in tostring(response):gmatch("\091\094\092\110\093\043") do
+            local direction, seconds = line:match("\094\037\115\042\064\109\111\118\101\037\115\043\040\102\111\114\119\097\114\100\124\098\097\099\107\119\097\114\100\124\108\101\102\116\124\114\105\103\104\116\041\037\115\043\040\091\037\100\037\046\093\043\041")
+            if direction then
+                MoveCharacter(direction, seconds)
+            end
+
+            if line:match("\094\037\115\042\064\106\117\109\112\037\115\042\036") then
+                JumpCharacter()
+            end
+
+            if line:match("\094\037\115\042\064\115\116\111\112\037\115\042\036") then
+                StopCharacter()
+            end
+
+            local chatText = line:match("\094\037\115\042\064\099\104\097\116\037\115\043\040\046\043\041\036")
+            if chatText then
+                ChatCharacter(chatText)
+            end
+        end
+    end
+
+    -- wrap original executor call to include tech commands after AI response
+    local oldAutoExecuteMarked = AutoExecuteMarked
+    AutoExecuteMarked = function(response)
+        oldAutoExecuteMarked(response)
+        ExecuteTechCommands(response)
+    end
+
+    --=========================================================
+    -- CREDIT PAGE
+    --=========================================================
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.new(0x0, 0x0, 0x0, 0x2D),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x32),
+        BackgroundTransparency = 0x1,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x1E,
+        TextColor3 = Config.Theme.Text
+    }, CreditPage)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.new(0x0, 0x0, 0x0, 0x64),
+        Size = UDim2.new(0x1, 0x0, 0x0, 0x19),
+        BackgroundTransparency = 0x1,
+        Text = "\067\082\069\065\084\069\068\032\066\089\032\073\077\080\079\083\083\073\066\076\069\079\066\066\089\051\050",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0xA,
+        TextColor3 = Config.Theme.Accent,
+        TextXAlignment = Enum.TextXAlignment.Center
+    }, CreditPage)
+
+    New("\084\101\120\116\076\097\098\101\108", {
+        Position = UDim2.new(0x0, 0x14, 0x0, 0x91),
+        Size = UDim2.new(0x1, -0x28, 0x0, 0x5F),
+        BackgroundColor3 = Config.Theme.Panel,
+        BorderSizePixel = 0x0,
+        Text = "\080\111\108\105\032\065\073\032\105\115\032\097\032\099\117\115\116\111\109\032\101\120\101\099\117\116\111\114\032\065\073\032\105\110\116\101\114\102\097\099\101\032\102\111\114\032\099\111\100\105\110\103\044\032\082\111\098\108\111\120\032\100\101\118\101\108\111\112\109\101\110\116\044\032\099\111\110\118\101\114\115\097\116\105\111\110\115\044\032\114\101\115\101\097\114\099\104\045\115\116\121\108\101\032\116\097\115\107\115\044\032\097\110\100\032\111\112\116\105\111\110\097\108\032\108\111\099\097\108\032\097\117\116\111\109\097\116\105\111\110\046",
+        Font = Enum.Font.Gotham,
+        TextSize = 0xB,
+        TextWrapped = true,
+        TextColor3 = Config.Theme.SubText
+    }, CreditPage)
+    Corner(CreditPage:FindFirstChildOfClass("\084\101\120\116\076\097\098\101\108"), 0x0)
+
+    --=========================================================
+    -- TAB SWITCHING
+    --=========================================================
+
+    local function SetTab(name)
+        State.MainTab = name
+
+        for tabName, button in pairs(Tabs) do
+            if tabName == name then
+                button.BackgroundColor3 = Config.Theme.Accent
+                button.TextColor3 = Color3.new(0x1, 0x1, 0x1)
+            else
+                button.BackgroundColor3 = Color3.fromRGB(0x19, 0x1A, 0x20)
+                button.TextColor3 = Config.Theme.SubText
+            end
+        end
+
+        for pageName, page in pairs(Pages) do
+            page.Visible = pageName == name
+        end
+    end
+
+    for name, button in pairs(Tabs) do
+        button.MouseButton1Click:Connect(function()
+            SetTab(name)
+        end)
+    end
+
+    SetTab("\077\065\073\078")
+
+    --=========================================================
+    -- OPEN BUTTON
+    --=========================================================
+
+    OpenButton = New("\084\101\120\116\066\117\116\116\111\110", {
+        AnchorPoint = Vector2.new(0x0, 0.5),
+        Position = UDim2.new(0x0, 0xE, 0.5, 0x0),
+        Size = UDim2.fromOffset(0x5C, 0x2A),
+        BackgroundColor3 = Config.Theme.Accent,
+        BorderSizePixel = 0x0,
+        AutoButtonColor = false,
+        Text = "\080\079\076\073\032\065\073",
+        Font = Enum.Font.GothamBold,
+        TextSize = 0x9,
+        TextColor3 = Color3.new(0x1, 0x1, 0x1),
+        Visible = false,
+        ZIndex = 0x3E8
+    }, Gui)
+    Corner(OpenButton, 0xB)
+    Stroke(OpenButton, Config.Theme.Accent, 0x1)
+
+    OpenButton.MouseButton1Click:Connect(function()
+        MainWindow.Visible = true
+        OpenButton.Visible = false
+        State.WindowOpen = true
+    end)
+
+    --=========================================================
+    -- DRAGGING
+    --=========================================================
+
+    local function MakeDraggable(handle, target)
+        local dragging = false
+        local dragStart = nil
+        local startPos = nil
+
+        handle.InputBegan:Connect(function(input)
+            if input.UserInputType ~= Enum.UserInputType.MouseButton1
+                and input.UserInputType ~= Enum.UserInputType.Touch then
+                return
+            end
+
+            dragging = true
+            dragStart = input.Position
+            startPos = target.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end)
+
+        UIS.InputChanged:Connect(function(input)
+            if not dragging then
+                return
+            end
+
+            if input.UserInputType ~= Enum.UserInputType.MouseMovement
+                and input.UserInputType ~= Enum.UserInputType.Touch then
+                return
+            end
+
+            local delta = input.Position - dragStart
+
+            target.Position = UDim2.new(
+                startPos.X.Scale,
+                startPos.X.Offset + delta.X,
+                startPos.Y.Scale,
+                startPos.Y.Offset + delta.Y
+            )
+        end)
+    end
+
+    MakeDraggable(MainHeader, MainWindow)
+    MakeDraggable(IntroHeader, IntroWindow)
+
+    --=========================================================
+    -- CLOSE / MINIMIZE
+    --=========================================================
+
+    CloseButton.MouseButton1Click:Connect(function()
+        State.GenerationID += 0x1
+        State.Generating = false
+        MainWindow.Visible = false
+        OpenButton.Visible = true
+        State.WindowOpen = false
+        Notify("\080\111\108\105\032\065\073\032\099\108\111\115\101\100\032\045\032\117\115\101\032\080\079\076\073\032\065\073\032\116\111\032\114\101\111\112\101\110")
+    end)
+
+    MinButton.MouseButton1Click:Connect(function()
+        State.Minimized = not State.Minimized
+
+        if State.Minimized then
+            Body.Visible = false
+            Animate(MainWindow, {
+                Size = UDim2.fromOffset(
+                    math.max(0x14A, MainWindow.AbsoluteSize.X),
+                    0x3C
+                )
+            }, 0.2)
+            MinButton.Text = "\079\080\069\078"
+        else
+            Body.Visible = true
+            ApplyScale()
+            MinButton.Text = "\077\073\078"
+        end
+    end)
+
+    --=========================================================
+    -- KEYBINDS
+    --=========================================================
+
+    UIS.InputBegan:Connect(function(input, processed)
+        if processed then
+            return
+        end
+
+        if input.KeyCode == Enum.KeyCode.RightShift then
+            if MainWindow.Visible then
+                MainWindow.Visible = false
+                OpenButton.Visible = true
+            else
+                MainWindow.Visible = true
+                OpenButton.Visible = false
+            end
+        elseif input.KeyCode == Enum.KeyCode.Escape and State.Generating then
+            State.GenerationID += 0x1
+            State.Generating = false
+            SendButton.Text = "\083\069\078\068"
+            SendButton.BackgroundColor3 = Config.Theme.Accent
+            HeaderStatus.Text = "\083\084\079\080\080\069\068"
+            HeaderStatus.TextColor3 = Config.Theme.Red
+        end
+    end)
+
+    --=========================================================
+    -- RESPONSIVE SIZING
+    --=========================================================
+
+    local function ResizeIntro()
+        local camera = workspace.CurrentCamera
+        if not camera then
+            return
+        end
+
+        local viewport = camera.ViewportSize
+
+        local maxWidth = math.min(0x2F8, viewport.X - 0x10)
+        local width = math.max(0x140, maxWidth)
+
+        local ratio = viewport.X < 0x1F4 and 0.74 or 0.86
+        local height = math.floor(width / ratio)
+        height = math.min(height, math.max(0x1A4, viewport.Y - 0x10))
+        height = math.max(0x1A4, height)
+
+        IntroAspect.AspectRatio = width / math.max(height, 0x1)
+        IntroWindow.Size = UDim2.fromOffset(width, height)
+    end
+
+    ResizeIntro()
+
+    if workspace.CurrentCamera then
+        workspace.CurrentCamera:GetPropertyChangedSignal("\086\105\101\119\112\111\114\116\083\105\122\101"):Connect(ResizeIntro)
+    end
+
+    ApplyScale()
+    ApplyOpacity()
+
+    --=========================================================
+    -- STARTUP STATUS
+    --=========================================================
+
+    if Request then
+        Notify("\080\111\108\105\032\065\073\032\108\111\097\100\101\100")
+    else
+        Notify("\072\084\084\080\032\114\101\113\117\101\115\116\032\102\117\110\099\116\105\111\110\032\110\111\116\032\100\101\116\101\099\116\101\100")
+        warn("\091\080\111\108\105\032\065\073\093\032\072\084\084\080\032\114\101\113\117\101\115\116\032\102\117\110\099\116\105\111\110\032\110\111\116\032\100\101\116\101\099\116\101\100\046\032\084\104\101\032\085\073\032\099\097\110\032\115\116\105\108\108\032\108\111\097\100\044\032\098\117\116\032\065\073\032\114\101\113\117\101\115\116\115\032\119\105\108\108\032\110\111\116\032\119\111\114\107\046")
+    end
+
+    print("\091\080\111\108\105\032\065\073\093\032\076\111\097\100\101\100\032\115\117\099\099\101\115\115\102\117\108\108\121")
+
+    --=========================================================
+    -- RETURN CONTROL OBJECT
+    --=========================================================
+
+    return {
+        Gui = Gui,
+        Config = Config,
+        State = State,
+        History = History,
+        SendMessage = SendMessage
+    }
+end
+
+--=============================================================
+-- SAFE START
+--=============================================================
+
+local ok, result = xpcall(Boot, function(err)
+    local message = debug.traceback(tostring(err), 0x2)
+    warn("\091\080\111\108\105\032\065\073\093\032\070\065\084\065\076\032\069\082\082\079\082\092\110" .. message)
+    return message
+end)
+
+if not ok then
+    -- Make failures visible even in executors that hide console output.
+    pcall(function()
+        local parent
+        if typeof(gethui) == "\102\117\110\099\116\105\111\110" then
+            local good, value = pcall(gethui)
+            if good and value then
+                parent = value
+            end
+        end
+        parent = parent or game:GetService("\067\111\114\101\071\117\105")
+
+        local gui = Instance.new("\083\099\114\101\101\110\071\117\105")
+        gui.Name = "\080\111\108\105\065\073\095\069\114\114\111\114"
+        gui.ResetOnSpawn = false
+        gui.Parent = parent
+
+        local frame = Instance.new("\070\114\097\109\101")
+        frame.AnchorPoint = Vector2.new(0.5, 0.5)
+        frame.Position = UDim2.fromScale(0.5, 0.5)
+        frame.Size = UDim2.fromOffset(0x1A4, 0xE6)
+        frame.BackgroundColor3 = Color3.fromRGB(0x12, 0x12, 0x16)
+        frame.BorderSizePixel = 0x0
+        frame.Parent = gui
+
+        Instance.new("\085\073\067\111\114\110\101\114", frame).CornerRadius = UDim.new(0x0, 0xE)
+
+        local title = Instance.new("\084\101\120\116\076\097\098\101\108")
+        title.Size = UDim2.new(0x1, -0x14, 0x0, 0x23)
+        title.Position = UDim2.fromOffset(0xA, 0xA)
+        title.BackgroundTransparency = 0x1
+        title.Text = "\080\079\076\073\032\065\073\032\070\065\073\076\069\068\032\084\079\032\076\079\065\068"
+        title.Font = Enum.Font.GothamBold
+        title.TextSize = 0xF
+        title.TextColor3 = Color3.fromRGB(0xFF, 0x6E, 0x6E)
+        title.Parent = frame
+
+        local errorBox = Instance.new("\084\101\120\116\066\111\120")
+        errorBox.Position = UDim2.fromOffset(0xA, 0x32)
+        errorBox.Size = UDim2.new(0x1, -0x14, 0x1, -0x3C)
+        errorBox.BackgroundColor3 = Color3.fromRGB(0xA, 0xA, 0xD)
+        errorBox.BorderSizePixel = 0x0
+        errorBox.ClearTextOnFocus = false
+        errorBox.MultiLine = true
+        errorBox.TextWrapped = true
+        errorBox.TextEditable = false
+        errorBox.TextXAlignment = Enum.TextXAlignment.Left
+        errorBox.TextYAlignment = Enum.TextYAlignment.Top
+        errorBox.Font = Enum.Font.Code
+        errorBox.TextSize = 0xA
+        errorBox.TextColor3 = Color3.fromRGB(0xE1, 0xE1, 0xE6)
+        errorBox.Text = tostring(result)
+        errorBox.Parent = frame
+
+        Instance.new("\085\073\067\111\114\110\101\114", errorBox).CornerRadius = UDim.new(0x0, 0x9)
+    end)
+end
+
+ end)(...)
